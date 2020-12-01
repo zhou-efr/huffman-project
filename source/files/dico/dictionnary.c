@@ -10,6 +10,15 @@
 #include "../SLL/Element.h"
 
 
+
+Dico* htreetodico(Tree* huff)
+{
+    char buffer[100];
+    Dico* ret = all_left_dico(huff, buffer, 0, 100);
+    balance_BST_all_left(&ret);
+    return ret;
+}
+
 char* get_value(Dico* dictionary, char key)
 {
     if(!dictionary)
