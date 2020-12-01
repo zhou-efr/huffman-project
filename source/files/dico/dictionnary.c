@@ -11,6 +11,43 @@
 
 
 
+int lenght(Dico* d)
+{
+    if(d != NULL)
+    {
+        return 1 + lenght(d->left);
+    }
+    return 0;
+}
+Dico* mid_of(Dico* d)
+{
+    int len = lenght(d);
+
+    Dico* ret = d;
+    for(int i = 0; i<len/2 - 1; i++)
+    {
+        ret = ret->left;
+    }
+    Dico* buffer = ret;
+    ret = ret->left;
+    buffer->left = NULL;
+
+    return ret;
+}
+void balance_BST_all_left(Dico** tree)
+{
+    if(tree == NULL){return;}
+
+    if(*tree != NULL && (*tree)->left != NULL)
+    {
+        Dico* buffer = *tree;
+        *tree = mid_of(buffer);
+        (*tree)->right = buffer;
+        balance_BST_all_left(&(*tree)->left);
+        balance_BST_all_left(&(*tree)->right);
+    }
+}
+
 Dico* htreetodico(Tree* huff)
 {
     char buffer[100];
