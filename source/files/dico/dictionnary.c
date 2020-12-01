@@ -10,6 +10,71 @@
 #include "../SLL/Element.h"
 
 
+Dico* merge(Dico* a, Dico* b)
+{
+    if(a == NULL)
+    {
+        if(b == NULL)
+        {
+            return NULL;
+        }
+        return b;
+    }
+    if(b == NULL)
+    {
+        return a;
+    }
+
+    Dico** scan = &a;
+    while(*scan != NULL)
+    {
+        if(b != NULL && b->data < (*scan)->data)
+        {
+            Dico* temp = b;
+            b = b->left;
+            temp->left = *scan;
+            *scan = temp;
+        }
+        scan = &(*scan)->left;
+    }
+    if(b != NULL)
+    {
+        *scan = b;
+    }
+    return a;
+}
+
+Dico* all_left_dico(Tree* huff, char* buffer, int lsize, int psize)
+{
+    if(huff == NULL){return NULL;}
+    if(huff->data != 0)
+    {
+        Dico* ret = (Dico*)malloc(sizeof(Dico));
+        ret->key = huff->data;
+        ret->value = copy(buffer, lsize);
+        ret->left = NULL;
+        ret->right = NULL;
+
+        return ret;
+    }
+
+    int fr = 0;
+    if(lsize + 1 > psize)
+    {
+        psize += 100;
+        buffer = (char*)malloc(psize*sizeof(char));
+        fr = 1;
+    }
+
+    buffer[lsize] = '0';
+    Dico* zero = all_left_dico(huff->left, buffer, lsize+1, psize);
+    buffer[lsize] = '1';
+    Dico* one = all_left_dico(huff->right, buffer, lsize+1, psize);
+
+    if(fr){free(buffer);}
+
+    return merge(zero, one);
+}
 
 int lenght(Dico* d)
 {
