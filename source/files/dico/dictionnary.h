@@ -18,5 +18,8 @@ typedef struct _dictionary
     struct _dictionary *left;
 }Dico;
 
+char* get_value(Dico* dictionary, char key);
+Dico* slltodico(Element* node);
+void d_free(Dico* dictionary);
 
 #endif //HUFFMAN_NAIVE_C11_DICTIONNARY_H
