@@ -18,6 +18,7 @@ typedef struct _dictionary
     struct _dictionary *left;
 }Dico;
 
+Dico* htreetodico(Tree* huff);
 char* get_value(Dico* dictionary, char key);
 Dico* slltodico(Element* node);
 void d_free(Dico* dictionary);
