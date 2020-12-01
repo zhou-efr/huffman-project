@@ -41,3 +41,20 @@ void d_free(Dico* dictionary)
     }
 }
 
+void saveDictionary(Dico* dictionary)
+{
+    FILE* out = fopen("dictionary.txt", "w");
+    sub_function_saveDictionary(dictionary, out);
+    fclose(out);
+}
+
+void sub_function_saveDictionary(Dico* dictionary, FILE* dico_file)
+{
+    if(dictionary != NULL)
+    {
+        fprintf(dico_file, "%c%s", dictionary->key, dictionary->value);
+        //printf("%c : %s\n", dictionary->key, dictionary->value);
+        sub_function_saveDictionary(dictionary->left);
+        sub_function_saveDictionary(dictionary->right);
+    }
+}
