@@ -3,24 +3,22 @@
 
 int main()
 {
-    Dico* test = (Dico*)malloc(sizeof(Dico));
+    /*   must create a huffman tree named "huff" here which include somwhere the letter 'a'   */
+    Dico* dictionary = htreetodico(huff);
+    printf("%s", get_value(dictionary, 'a'));
+    saveDictionary(dictionary);
+    system("pause");
 
-    test->key = 'b';
-    test->value = '000101';
-    test->right = (Dico*)malloc(sizeof(Dico));
-    test->left = (Dico*)malloc(sizeof(Dico));
-    test->right->key = 'a';
-    test->right->value = '110';
-    test->right->right = NULL;
-    test->right->left = NULL;
-    test->left->key = 'c';
-    test->left->value = '011';
-    test->left->right = NULL;
-    test->left->left = NULL;
+    /*   must create a node named "node" here   */
+    dictionary = slltodico(node);
+    saveDictionary(dictionary);
+    
+    d_free(dictionary);
 
-    saveDictionary(test);
 
-    free(test->right);
-    free(test->left);
-    free(test);
+    /* Result wanted :
+     * print the corresponding code of the letter 'a'
+     * write in dictionary.txt the dictionnary coresponding to the huffman tree
+     * write in dictionary.txt after the pause the dictionnary coresponding to the node
+    */
 }
