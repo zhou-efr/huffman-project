@@ -23,4 +23,7 @@ add_executable(huffman_project
 
         source/files/fstream/functions.h
         source/files/fstream/functions.c
+
+        source/files/UI/userInterface.h
+        source/files/UI/userInterface.c
         )

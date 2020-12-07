@@ -11,11 +11,11 @@
  * This function compresses a given file
  * @param target is the file we want to compress
  */
-void b_compression(char *target)
+int b_compression(char *target)
 {
     // --- file read ---
     // file variables
-    FILE* input = fopen(target, "r"); if (!input) return;
+    FILE* input = fopen(target, "r"); if (!input) return 1;
     int size = get_file_size(input)+1;
 
     // text variables
@@ -68,58 +68,82 @@ void b_compression(char *target)
      * int i
      * */
 
-    // file variable
-    FILE* output = fopen("output.tdz", "wb");
+    char* outputPath = (char*)malloc(300*sizeof(char));
+    int strSize = strlen(target);
+    for (int j = 0; j < strSize; j++) {
+        if (target[j] == '.'){
+            outputPath[j] = target[j];
+            outputPath[j+1] = 't';
+            outputPath[j+2] = 'd';
+            outputPath[j+3] = 'z';
+            outputPath[j+4] = '\0';
+            break;
+        }else{
+            outputPath[j] = target[j];
+        }
+    }
 
-    // temporary variables
-    char* temp_bin = NULL;
-    int temp_bit = 0;
+    FILE* output = fopen(outputPath, "w");
 
-    // binary size
-    int bsize = 0;
 
+//    // file variable
+//    FILE* output = fopen("output.tdz", "wb");
+//
+//    // temporary variables
+//    char* temp_bin = NULL;
+//    int temp_bit = 0;
+//
+//    // binary size
+//    int bsize = 0;
+//
+//    printf()
+//
     i = 0;
     while (i <= size)
     {
-        // write in file
-        temp_bin = get_value(dictionary, transcription[i]);
-        //printf("%c", transcription[i]);
-        //printf("|%c\n", transcription[i]);
-        for (int j = 0; temp_bin[j] != '\0'; j++)
-        {
-            //printf("%c", temp_bin[j]);
-            temp_bit = (temp_bin[j] == '1');
-            fwrite(&temp_bit, 1, 1, output);
-            bsize++;
-        }
+//        // write in file
+//            temp_bin = get_value(dictionary, transcription[i]);
+//        //printf("%c", transcription[i]);
+//        //printf("|%c\n", transcription[i]);
+//        for (int j = 0; temp_bin[j] != '\0'; j++)
+//        {
+//            //printf("%c", temp_bin[j]);
+//            temp_bit = (temp_bin[j] == '1');
+//            fwrite(&temp_bit, 1, 1, output);
+//            bsize++;
+//        }
+
+        fprintf(output, get_value(dictionary, transcription[i]));
 
         // iterator update
         i++;
     }
-
-    // TODO: add the over byte system (integer)
-    bsize = (bsize%8)?(8-(bsize%8)):0;
-    ch = (char)bsize;
-    temp_bit = 0;
-    for (int j = 0; j < bsize; j++)
-    {
-        fwrite(&temp_bit, 1, 1, output);
-    }
-    fseek(output, 0L, SEEK_SET);
-    fwrite(&ch, sizeof(char), 1, output);
+//
+//    // TODO: add the over byte system (integer)
+//    bsize = (bsize%8)?(8-(bsize%8)):0;
+//    ch = (char)bsize;
+//    temp_bit = 0;
+//    for (int j = 0; j < bsize; j++)
+//    {
+//        fwrite(&temp_bit, 1, 1, output);
+//    }
+//    fseek(output, 0L, SEEK_SET);
+//    fwrite(&ch, sizeof(char), 1, output);
 
     // close file
     fclose(output);
 
     // temporary
-    //saveDictionary(dictionary);
+    saveDictionary(dictionary);
 
     // free variables
     free(transcription);
     d_free(dictionary);
 
-    b_decompression("output.tdz", HT);
+    uncompress(outputPath, HT);
 
     // free temporary
     t_free(HT);
+
+    return 0;
 }

@@ -158,7 +158,7 @@ void saveDictionary(Dico* dictionary)
     {
         FILE* out = fopen("dictionary.txt", "a");
 
-        fprintf(out, "%c%s", dictionary->key, dictionary->value);
+        fprintf(out, "%c : %s\n", dictionary->key, dictionary->value);
         //printf("%c : %s\n", dictionary->key, dictionary->value);
 
         fclose(out);

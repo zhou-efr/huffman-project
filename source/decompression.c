@@ -5,6 +5,64 @@
 #include "files/fstream/functions.h"
 #include "files/dico/dictionnary.h"
 
+void uncompress(char* target, Tree* arbre)
+{
+    FILE* binaries = NULL;
+    binaries = fopen(target, "r");
+
+    if(!binaries)
+        return;
+
+    char* outputPath = (char*)malloc(300*sizeof(char));
+    int strSize = strlen(target);
+    for (int j = 0; j < strSize; j++) {
+        if (target[j] == '.'){
+            outputPath[j] = target[j];
+            outputPath[j+1] = 't';
+            outputPath[j+2] = 'x';
+            outputPath[j+3] = 't';
+            outputPath[j+4] = '\0';
+            break;
+        }else{
+            outputPath[j] = target[j];
+        }
+    }
+
+    FILE* output = NULL;
+    output = fopen(outputPath, "w");
+
+    char ch = '\0';
+    Tree* searcher = arbre;
+
+    while ((ch = fgetc(binaries)) != EOF)
+    {
+        if (!hasSons(searcher))
+        {
+            fputc(searcher->data, output);
+            searcher = arbre;
+        }
+
+        if(isZero(ch)){
+            searcher = searcher->left;
+        }else{
+            searcher = searcher->right;
+        }
+    }
+
+    if (!hasSons(searcher))
+    {
+        fputc(searcher->data, output);
+        searcher = arbre;
+    }
+
+    fclose(binaries);
+    fclose(output);
+}
+
+int isZero(char a)
+{
+    return a == '0';
+}
 
 /**
  * This fucntion decompresses a given file thanks to a given HT
