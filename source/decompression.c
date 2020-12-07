@@ -1,9 +1,9 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <string.h>
-#include "function.h"
-#include "../fstream/functions.h"
-#include "../dico/dictionnary.h"
+#include "decompression.h"
+#include "files/fstream/functions.h"
+#include "files/dico/dictionnary.h"
 
 
 /**
@@ -45,6 +45,7 @@ void b_decompression(char *target, Tree *tree)
 
         if (!hasSons(searcher))
         {
+            //printf("%c", searcher->data);
             fputc(searcher->data, output);
             searcher = tree;
         }

@@ -8,6 +8,7 @@
 #include <windows.h>
 #include "HuffmanTree.h"
 #include "../SLL/Element.h"
+#include "../stack/Stack.h"
 
 /**
  *
@@ -48,8 +49,7 @@ Tree* create_tree(char data, int occurrence, Tree* left, Tree* right)
  * @param tree
  * @param space
  */
-void display_tree(Tree *tree, int space)
-{
+void display_tree(Tree *tree, int space){
     if(tree != NULL)
     {
         if (1)
@@ -68,28 +68,92 @@ void display_tree(Tree *tree, int space)
     }
 }
 
+Element* BT_to_UT(Tree* occurrences)
+{
+    if(!occurrences){return NULL;}
+    Stack* history = initialize_stack();
+    Element** returned = (Element**)malloc(sizeof(Element*)), **buffer;
+    *returned = NULL;
+    buffer = returned;
+
+    push_stack(history, occurrences);
+
+    while(!is_stack_empty(history)){
+        Tree* node = pull_stack(history);
+
+        for(buffer = returned; *buffer != NULL; buffer = &((*buffer)->next))
+        {
+            if((*buffer)->node->occurrence >= node->occurrence)
+                break;
+        }
+        *buffer = create_element(
+                create_tree(node->data, node->occurrence, NULL, NULL),
+                (*buffer));
+
+        if(node->right){
+            push_stack(history, node->right);
+        }
+
+        if(node->left){
+            push_stack(history, node->left);
+        }
+    }
+
+    free(history);
+    Element* tmp = *returned;
+    free(returned);
+    return tmp;
+}
+
+void SLL_to_HT(Element** l) //node list c'est mon élément dans ma version, et mon huffman tree à one et zero, pas left and right
+{
+    if(l == NULL){return;} //ça c'est pour l'erreur, à del pour toi si tu en veux pas
+
+    if(*l != NULL && (*l)->next != NULL)
+    {
+        Element* add = init_element();
+        add->node->left = (*l)->node;
+        add->node->right = (*l)->next->node;
+        add->node->occurrence = add->node->left->occurrence + add->node->right->occurrence; //ça c'est la node qui est la somme des deux les plus petites
+
+        Element* buffer = (*l)->next->next, **scan; //on avance de deux
+        free((*l)->next); //les free avant de les perdres
+        free(*l);
+        *l = buffer;
+        scan = l;
+        while (*scan != NULL && (*scan)->node->occurrence < add->node->occurrence) //on remet bien la nouvelle node
+        {
+            scan = &(*scan)->next;
+        }
+        add->next = *scan;
+        *scan = add;
+
+        SLL_to_HT(l); //reccursif !
+    }
+}
+
 /**
  *
  * @param SLL
  * @return
  */
-Tree* sort_SLL_to_BT(Element* SLL)
-{
-    Tree** top = NULL, *buffer = create_tree(SLL->data, SLL->occurrence, NULL, NULL);
-    top = &buffer;
-    Element* temp = SLL->next;
-    while (temp != NULL)
-    {
-        buffer = create_tree(0, 0, create_tree(temp->data, temp->occurrence, NULL, NULL), *top);
-        top = &buffer;
+//Tree* sort_SLL_to_BT(Element* SLL)
+//{
+//    Tree** top = NULL, *buffer = create_tree(SLL->data, SLL->occurrence, NULL, NULL);
+//    top = &buffer;
+//    Element* temp = SLL->next;
+//    while (temp != NULL)
+//    {
+//        buffer = create_tree(0, 0, create_tree(temp->data, temp->occurrence, NULL, NULL), *top);
+//        top = &buffer;
+//
+//        // update of the iterator
+//        temp = temp->next;
+//    }
+//    return *top;
+//}
 
-        // update of the iterator
-        temp = temp->next;
-    }
-    return *top;
-}
-
-void add_node(Tree **ht, char ch)
+void add_occurrences(Tree **ht, char ch)
 {
     if((*ht))
     {
@@ -97,9 +161,9 @@ void add_node(Tree **ht, char ch)
         {
             (*ht)->occurrence++;
         }else if((*ht)->data > ch){
-            add_node(&((*ht)->right), ch);
+            add_occurrences(&((*ht)->right), ch);
         }else{
-            add_node(&((*ht)->left), ch);
+            add_occurrences(&((*ht)->left), ch);
         }
     }else{
         (*ht) = create_tree(ch, 1, NULL, NULL);
@@ -158,16 +222,4 @@ char *get_bin(char c, Tree *source, int size)
 int hasSons(Tree* arbre)
 {
     return (arbre->left && arbre->right);
-}
-
-/**
- * save_trees : save a tree in a *.tdz.dictionary file
- * @param hf : tree to save
- */
-void greenPeace(Tree* hf)
-{
-    if(hf)
-    {
-        
-    }
 }

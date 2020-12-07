@@ -1,9 +1,11 @@
 #include <stdio.h>
 #include <malloc.h>
 #include <string.h>
-#include "function.h"
-#include "../fstream/functions.h"
-#include "../dico/dictionnary.h"
+#include "compression.h"
+#include "files/fstream/functions.h"
+#include "files/dico/dictionnary.h"
+#include "decompression.h"
+#include "files/HT/HuffmanTree.h"
 
 /**
  * This function compresses a given file
@@ -14,7 +16,7 @@ void b_compression(char *target)
     // --- file read ---
     // file variables
     FILE* input = fopen(target, "r"); if (!input) return;
-    int size = get_file_size(input);
+    int size = get_file_size(input)+1;
 
     // text variables
     char* transcription = (char*)malloc(size*sizeof(char));
@@ -24,7 +26,7 @@ void b_compression(char *target)
     int i = 0;
 
     // character list
-    Element* list = NULL;
+    Tree* occurrences = NULL;
 
     //file read
     while ((ch = fgetc(input)) != EOF)
@@ -36,7 +38,7 @@ void b_compression(char *target)
         i++;
 
         // update list
-        add_occurrence(&list, ch);
+        add_occurrences(&occurrences, ch);
     }
 
     // end the file transcription
@@ -46,12 +48,15 @@ void b_compression(char *target)
     fclose(input);
 
     // list to dictionary
-    Dico* dictionary = slltodico(list);
+    Element* HS = BT_to_UT(occurrences);
+    SLL_to_HT(&HS);
+    Tree* HT = HS->node;
+    Dico* dictionary = htreetodico(HT, occurrences);
 
     // temporary
     //Tree* h_tree = sort_SLL_to_BT(list);
     // free SLL
-    free_SLL(list);
+    free_SLL(HS);
 
     // --- compression ---
 
@@ -78,8 +83,11 @@ void b_compression(char *target)
     {
         // write in file
         temp_bin = get_value(dictionary, transcription[i]);
+        //printf("%c", transcription[i]);
+        //printf("|%c\n", transcription[i]);
         for (int j = 0; temp_bin[j] != '\0'; j++)
         {
+            //printf("%c", temp_bin[j]);
             temp_bit = (temp_bin[j] == '1');
             fwrite(&temp_bit, 1, 1, output);
             bsize++;
@@ -110,8 +118,8 @@ void b_compression(char *target)
     free(transcription);
     d_free(dictionary);
 
-    //b_decompression("output.tdz", h_tree);
+    b_decompression("output.tdz", HT);
 
     // free temporary
-    //t_free(h_tree);
+    t_free(HT);
 }

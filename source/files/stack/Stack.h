@@ -5,16 +5,8 @@
 #ifndef HUFFMAN_NAIVE_C11_STACK_H
 #define HUFFMAN_NAIVE_C11_STACK_H
 
+#include "../structures.h"
 #include "../HT/HuffmanTree.h"
-
-typedef struct StackNode {
-    Tree* data;
-    struct StackNode* next;
-}StackNode;
-
-typedef struct Stack{
-    StackNode* top;
-}Stack;
 
 void push_stack(Stack* stack, Tree *data);
 Tree * pull_stack(Stack* stack);

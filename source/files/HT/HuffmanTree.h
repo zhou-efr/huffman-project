@@ -5,15 +5,8 @@
 #ifndef HUFFMAN_NAIVE_C11_HUFFMANTREE_H
 #define HUFFMAN_NAIVE_C11_HUFFMANTREE_H
 
+#include "../structures.h"
 #include "../SLL/Element.h"
-
-typedef struct _huffmanTree
-{
-    int occurrence;
-    char data;
-    struct _huffmanTree* left;
-    struct _huffmanTree* right;
-}Tree;
 
 Tree* init_Tree();
 Tree* create_tree(char data,
@@ -24,6 +17,8 @@ void t_free(Tree* node);
 Tree* sort_SLL_to_BT(Element* SLL);
 char *get_bin(char c, Tree *source, int size);
 int hasSons(Tree* arbre);
-void add_node(Tree **ht, char ch);
+Element* BT_to_UT(Tree* occurrences);
+void SLL_to_HT(Element** SLL);
+void add_occurrences(Tree **ht, char ch);
 
 #endif //HUFFMAN_NAIVE_C11_HUFFMANTREE_H
