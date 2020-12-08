@@ -17,11 +17,7 @@ void shell_tdz()
 }
 
 #ifdef _WIN32
-/**
- * custom_color : function that display given text with the given color
- * @param str : text we want to display
- * @param color : wanted color (string or string with at [0] a number)
- */
+
 void custom_color(char* str, char* color)
 {
     HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -80,12 +76,6 @@ void custom_color(char* str, char* color)
 }
 #endif
 
-
-/**
- * getLine : home made function to get a line from a file
- * @param fp : the read file
- * @return the read Line
- */
 char *getLine(FILE *fp, int size)
 {
     char* path = malloc(size*sizeof(char));
@@ -96,21 +86,11 @@ char *getLine(FILE *fp, int size)
     return path;
 }
 
-/**
- * cin : home made function to get string from console
- * @return the entered string
- */
 char *cin(int size)
 {
     return getLine(stdin, size);
 }
 
-/**
- * menu : bind a menu with the given component
- * @param size : number of component
- * @param ... : component
- * @return the return value of the selected component (if no component selected return -1)
- */
 int menu(int size, ...)
 {
     // getting the input answer

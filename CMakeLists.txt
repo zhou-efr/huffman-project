@@ -6,8 +6,7 @@ set(CMAKE_C_STANDARD 11)
 add_executable(huffman_project
         source/main.c
 
-        source/compression.c
-        source/decompression.c
+        source/files/compression/compression.c
 
         source/files/stack/Stack.c
         source/files/stack/Stack.h

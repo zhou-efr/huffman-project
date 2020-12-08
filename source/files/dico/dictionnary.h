@@ -6,17 +6,47 @@
 #define HUFFMAN_NAIVE_C11_DICTIONNARY_H
 
 #include "../structures.h"
-#include "../HT/HuffmanTree.h"
-#include "../SLL/Element.h"
 
+/**
+ *
+ * @param huff
+ * @param ascii
+ * @return
+ */
 Dico* htreetodico(Tree* huff, Tree* ascii);
-Dico* sort(Dico* dictionary);
+
+/**
+ *
+ * @param tree
+ */
 void trees_balance_BST(Dico** tree);
+
+/**
+ *
+ * @param tree
+ * @param value
+ * @param transcription
+ */
 void trees_add_value_BST(Dico **tree, char value, char *transcription);
+
+/**
+ *
+ * @param dictionary
+ * @param key
+ * @return
+ */
 char* get_value(Dico* dictionary, char key);
-Dico* slltodico(Element* node);
+
+/**
+ *
+ * @param dictionary
+ */
 void d_free(Dico* dictionary);
-void saveDictionary(Dico* dictionary);
+
+/**
+ *
+ * @param tree
+ */
 void balance(Dico** tree);
 
 #endif //HUFFMAN_NAIVE_C11_DICTIONNARY_H

@@ -5,8 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include "compression.h"
-#include "decompression.h"
+#include "files/compression/compression.h"
 #include "files/UI/userInterface.h"
 
 void txtToBinairies(char* target)

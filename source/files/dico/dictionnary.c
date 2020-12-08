@@ -5,9 +5,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "dictionnary.h"
-#include "../stack/Stack.h"
 #include "../HT/HuffmanTree.h"
-#include "../SLL/Element.h"
 
 Dico* htreetodico(Tree* huff, Tree* ascii)
 {
@@ -131,16 +129,6 @@ char* get_value(Dico* dictionary, char key)
         return get_value(dictionary->right, key);
 }
 
-Dico* slltodico(Element* node)
-{
-    /*Tree* buffer = sort_SLL_to_BT(node);
-    Dico* tmp = htreetodico(buffer);
-    t_free(buffer);
-    return tmp;*/
-
-    return NULL;
-}
-
 void d_free(Dico* dictionary)
 {
     if(dictionary)
@@ -149,21 +137,5 @@ void d_free(Dico* dictionary)
         d_free(dictionary->right);
         free(dictionary->value);
         free(dictionary);
-    }
-}
-
-void saveDictionary(Dico* dictionary)
-{
-    if(dictionary)
-    {
-        FILE* out = fopen("dictionary.txt", "a");
-
-        fprintf(out, "%c : %s\n", dictionary->key, dictionary->value);
-        //printf("%c : %s\n", dictionary->key, dictionary->value);
-
-        fclose(out);
-
-        saveDictionary(dictionary->left);
-        saveDictionary(dictionary->right);
     }
 }

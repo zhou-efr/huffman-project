@@ -8,12 +8,24 @@
 #include "../structures.h"
 #include "../HT/HuffmanTree.h"
 
+/**
+ *
+ * @return
+ */
 Element* init_element();
+
+/**
+ *
+ * @param node
+ * @param next
+ * @return
+ */
 Element* create_element(Tree* node , Element* next);
-void list_insert(Element** l, char c, int n, int pos);
-void display_liste(Element* l);
+
+/**
+ *
+ * @param node
+ */
 void free_SLL(Element* node);
-void swap(Element* n1, Element* n2);
-void add_occurrence(Element **list, char occurrence);
 
 #endif //HUFFMAN_NAIVE_C11_ELEMENT_H

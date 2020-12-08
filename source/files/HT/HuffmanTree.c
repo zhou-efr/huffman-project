@@ -4,16 +4,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
-#include <windows.h>
 #include "HuffmanTree.h"
-#include "../SLL/Element.h"
 #include "../stack/Stack.h"
+#include "../SLL/Element.h"
 
-/**
- *
- * @return
- */
 Tree* init_Tree()
 {
     Tree* tree = (Tree*)malloc(sizeof(Tree));
@@ -25,14 +19,6 @@ Tree* init_Tree()
     return tree;
 }
 
-/**
- *
- * @param data
- * @param occurrence
- * @param left
- * @param right
- * @return
- */
 Tree* create_tree(char data, int occurrence, Tree* left, Tree* right)
 {
     Tree* tree = (Tree*)malloc(sizeof(Tree));
@@ -42,30 +28,6 @@ Tree* create_tree(char data, int occurrence, Tree* left, Tree* right)
     tree->right = right;
 
     return tree;
-}
-
-/**
- *
- * @param tree
- * @param space
- */
-void display_tree(Tree *tree, int space){
-    if(tree != NULL)
-    {
-        if (1)
-        {
-            for (int i = 0; i < space; ++i) {
-                printf("|  ");
-            }
-            printf("|-(%c : %d)\n", tree->data, tree->occurrence);
-        }
-
-        if(tree->left)
-            display_tree(tree->left, space+1);
-
-        if(tree->right)
-            display_tree(tree->right, space+1);
-    }
 }
 
 Element* BT_to_UT(Tree* occurrences)
@@ -105,8 +67,7 @@ Element* BT_to_UT(Tree* occurrences)
     return tmp;
 }
 
-void SLL_to_HT(Element** l) //node list c'est mon élément dans ma version, et mon huffman tree à one et zero, pas left and right
-{
+void SLL_to_HT(Element** l){
     if(l == NULL){return;} //ça c'est pour l'erreur, à del pour toi si tu en veux pas
 
     if(*l != NULL && (*l)->next != NULL)
@@ -132,27 +93,6 @@ void SLL_to_HT(Element** l) //node list c'est mon élément dans ma version, et 
     }
 }
 
-/**
- *
- * @param SLL
- * @return
- */
-//Tree* sort_SLL_to_BT(Element* SLL)
-//{
-//    Tree** top = NULL, *buffer = create_tree(SLL->data, SLL->occurrence, NULL, NULL);
-//    top = &buffer;
-//    Element* temp = SLL->next;
-//    while (temp != NULL)
-//    {
-//        buffer = create_tree(0, 0, create_tree(temp->data, temp->occurrence, NULL, NULL), *top);
-//        top = &buffer;
-//
-//        // update of the iterator
-//        temp = temp->next;
-//    }
-//    return *top;
-//}
-
 void add_occurrences(Tree **ht, char ch)
 {
     if((*ht))
@@ -170,10 +110,6 @@ void add_occurrences(Tree **ht, char ch)
     }
 }
 
-/**
- *
- * @param node
- */
 void t_free(Tree* node)
 {
     if(node != 0)
@@ -184,13 +120,6 @@ void t_free(Tree* node)
     }
 }
 
-/**
- *
- * @param c
- * @param source
- * @param size
- * @return
- */
 char *get_bin(char c, Tree *source, int size)
 {
     char* tmp = NULL;
@@ -249,6 +178,7 @@ void register_tree(FILE* output_file, Tree* tree)
         fputc('.', output_file);
     }
 }
+
 Tree* read_tree(FILE* tree_file)
 {
     if(tree_file == NULL){return NULL;}
