@@ -223,3 +223,49 @@ int hasSons(Tree* arbre)
 {
     return (arbre->left && arbre->right);
 }
+
+void register_tree(FILE* output_file, Tree* tree)
+{
+    if(output_file == NULL){return;}
+
+    if(tree != NULL)
+    {
+        if(tree->data == 0)
+        {
+            fputc(':',output_file);
+            register_tree(output_file, tree->left);
+            register_tree(output_file, tree->right);
+        }
+        else
+        {
+            if(tree->data == '.' || tree->data == ':' || tree->data == '#'){fputc('#', output_file);}
+            fputc(tree->data, output_file);
+            //if(tree->left != NULL || tree->right != NULL){t_free(tree->right);t_free(tree->left);}
+        }
+        //free(tree);
+    }
+    else
+    {
+        fputc('.', output_file);
+    }
+}
+Tree* read_tree(FILE* tree_file)
+{
+    if(tree_file == NULL){return NULL;}
+    char c = fgetc(tree_file);
+
+    if(c == '.' || c == EOF){return NULL;}
+
+    Tree* tree = init_Tree();
+    if(c == ':')
+    {
+        tree->left = read_tree(tree_file);
+        tree->right = read_tree(tree_file);
+    }
+    else
+    {
+        if(c == '#'){c = fgetc(tree_file);}
+        tree->data = c;
+    }
+    return tree;
+}

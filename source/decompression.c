@@ -5,28 +5,16 @@
 #include "files/fstream/functions.h"
 #include "files/dico/dictionnary.h"
 
-void uncompress(char* target, Tree* arbre)
+int uncompressChar(char* target, char *tree, char *outputPath)
 {
+    FILE* treeFile = fopen(tree, "r");
+    Tree* arbre = read_tree(treeFile);
+
     FILE* binaries = NULL;
     binaries = fopen(target, "r");
 
     if(!binaries)
-        return;
-
-    char* outputPath = (char*)malloc(300*sizeof(char));
-    int strSize = strlen(target);
-    for (int j = 0; j < strSize; j++) {
-        if (target[j] == '.'){
-            outputPath[j] = target[j];
-            outputPath[j+1] = 't';
-            outputPath[j+2] = 'x';
-            outputPath[j+3] = 't';
-            outputPath[j+4] = '\0';
-            break;
-        }else{
-            outputPath[j] = target[j];
-        }
-    }
+        return 1;
 
     FILE* output = NULL;
     output = fopen(outputPath, "w");
@@ -57,6 +45,7 @@ void uncompress(char* target, Tree* arbre)
 
     fclose(binaries);
     fclose(output);
+    return 0;
 }
 
 int isZero(char a)

@@ -140,7 +140,26 @@ int b_compression(char *target)
     free(transcription);
     d_free(dictionary);
 
-    uncompress(outputPath, HT);
+    outputPath = (char*)malloc(300*sizeof(char));
+    for (int j = 0; j < strSize; j++) {
+        if (target[j] == '.'){
+            outputPath[j] = target[j];
+            outputPath[j+1] = 'z';
+            outputPath[j+2] = 'd';
+            outputPath[j+3] = 'd';
+            outputPath[j+4] = '\0';
+            break;
+        }else{
+            outputPath[j] = target[j];
+        }
+    }
+    output = fopen(outputPath, "w");
+
+    //save tree
+    register_tree(output, HT);
+
+    //reclose file
+    fclose(output);
 
     // free temporary
     t_free(HT);

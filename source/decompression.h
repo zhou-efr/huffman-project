@@ -5,6 +5,6 @@
 
 void b_decompression(char *target, Tree *tree);
 int isZero(char a);
-void uncompress(char* target, Tree* arbre);
+int uncompressChar(char* target, char *arbre, char *uncompressChar);
 
 #endif //HUFFMAN_PROJECT_DECOMPRESSION_H

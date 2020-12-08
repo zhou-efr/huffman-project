@@ -20,5 +20,7 @@ int hasSons(Tree* arbre);
 Element* BT_to_UT(Tree* occurrences);
 void SLL_to_HT(Element** SLL);
 void add_occurrences(Tree **ht, char ch);
+void register_tree(FILE* output_file, Tree* tree);
+Tree* read_tree(FILE* tree_file);
 
 #endif //HUFFMAN_NAIVE_C11_HUFFMANTREE_H
