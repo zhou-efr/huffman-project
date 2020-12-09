@@ -76,19 +76,17 @@ void custom_color(char* str, char* color)
 }
 #endif
 
-char *getLine(FILE *fp, int size)
+void getLine(FILE *fp, int size, char *output)
 {
-    char* path = malloc(size*sizeof(char));
-    fgets(path, size, stdin); path[size-1] = '\0';
+    fgets(output, size, stdin); output[size-1] = '\0';
     int i = 0;
-    for (i = 0; path[i] != '\n'; i++);
-    path[i] = '\0';
-    return path;
+    for (i = 0; output[i] != '\n'; i++);
+    output[i] = '\0';
 }
 
-char *cin(int size)
+void cin(int size, char *output)
 {
-    return getLine(stdin, size);
+    getLine(stdin, size, output);
 }
 
 int menu(int size, ...)

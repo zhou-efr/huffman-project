@@ -7,34 +7,17 @@
 #include <time.h>
 #include "files/compression/compression.h"
 #include "files/UI/userInterface.h"
-
-void txtToBinairies(char* target)
-{
-    FILE* file_target = NULL, *file_output = NULL;
-    file_target = fopen(target, "r");
-    if(!file_target)
-        return;
-
-    file_output = fopen("./output.bin", "w");
-
-    char ch = 0;
-    while((ch = fgetc(file_target)) != EOF)
-    {
-        for (int i = 7; i >= 0; i--) {
-            fprintf(file_output, ((ch >> i) & 1)?"1":"0");
-        }
-    }
-
-    fclose(file_target);
-    fclose(file_output);
-}
+#include "files/fstream/functions.h"
+#ifdef unix
+#include <unistd.h>
+#endif
 
 int main()
 {
     shell_tdz();
 
-    MenuComponent compression = {"compress", 1},
-                  decompression = {"decompress", 2},
+    MenuComponent component_compression = {"compress", 1},
+                  component_decompression = {"decompress", 2},
                   quit = {"quit", 3},
                   debug = {"debug", 4},
                   compressionNumber = {"2", 1},
@@ -54,62 +37,54 @@ int main()
 
         ready = menu(7,
                      &quit,
-                     &compression,
-                     &decompression,
+                     &component_compression,
+                     &component_decompression,
                      &compressionNumber,
                      &decompressionNumber,
                      &quitNumber,
                      &debug);
     }
-    char* path, *pathDico,*outPath;
+
+    char path[300], pathDico[300], outPath[300];
 
     switch (ready) {
         case 1:
             printf("\n");
             printf("write the path of the target file\n");
-            path = cin(300);
+            cin(300, path);
 
-            if (b_compression(path))
+            if (compression(path))
             {
                 custom_color("\n404 error file not found", "mangenta");
-                system("pause");
             }else{
                 custom_color("\nsuccess\n", "green");
-                system("pause");
             }
-            free(path);
             break;
         case 2:
             printf("\n");
             printf("write the path of the compressed file\n");
-            path = cin(300);
+            cin(300, path);
             printf("write the path of the dictionary file\n");
-            pathDico = cin(300);
+            cin(300, pathDico);
             printf("write the path of the output file name & path\n");
-            outPath = cin(300);
+            cin(300, outPath);
 
 
-            if(uncompressChar(path, pathDico, outPath))
+            if(decompression(path, pathDico, outPath))
             {
-                custom_color("\n404 error file not found", "mangenta");
-                system("pause");
+                custom_color("\n404 error file not found\n", "mangenta");
             }else{
                 custom_color("\nsuccess\n", "green");
-                system("pause");
             }
-
-            free(path);
-            free(pathDico);
             break;
         case 4:
             printf("translation of the original file\n");
             txtToBinairies("a.txt");
-            printf("compression\n");
+            printf("component_compression\n");
             clock_t start = clock();
-            if (b_compression("a.txt"))
+            if (compression("a.txt"))
             {
-                custom_color("\n404 error file not found", "mangenta");
-                system("pause");
+                custom_color("\n404 error file not found\n", "mangenta");
             }else{
 
                 clock_t stop = clock();
@@ -117,24 +92,52 @@ int main()
                 printf("\nExecution time : %.5f\n", elapsed);
 
                 custom_color("\nsuccess\n", "green");
-                system("pause");
 
                 printf("decompression\n");
                 start = clock();
-                if(uncompressChar("a.tdz", "a.zdd", "output.txt"))
+                if(decompression("a.tdz", "a.zdd", "output.txt"))
                 {
-                    custom_color("\n404 error file not found", "mangenta");
-                    system("pause");
+                    custom_color("\n404 error file not found\n", "mangenta");
                 }else{
                     stop = clock();
                     elapsed = (double) (stop - start) / CLOCKS_PER_SEC;
                     printf("\nExecution time : %.5f\n", elapsed);
 
                     custom_color("\nsuccess\n", "green");
-                    system("pause");
+
+                    switch (compare("a.txt", "output.txt"))
+                    {
+                        case 1:
+                            custom_color("\nError : output different from the input\n", "red");
+                            break;
+                        case 2:
+                            custom_color("\n404 Error : input not found\n", "magenta");
+                            break;
+                        case 3:
+                            custom_color("\n404 Error : output not found\n", "magenta");
+                            break;
+                        default:
+                            custom_color("\ninput identical to output\n", "green");
+                            FILE *file_original = fopen("output.bin", "r"),
+                                 *target_file = fopen("a.tdz", "r");
+                            double ratio = ((double)get_file_size(target_file))/((double)get_file_size(file_original));
+                            if (ratio > 1) {
+                                custom_color("\nWarning: compression inefficient\n", "yellow");
+                            }
+                            printf("\ncompression ratio : %lf%%\n", ratio*100);
+                            fclose(file_original);
+                            fclose(target_file);
+                    }
                 }
             }
             break;
+        default:
+            custom_color("\nerror, missed input\n", "red");
     }
+    #ifdef WIN32
+    system("pause");
+    #elif unix
+    pause();
+    #endif
     return 0;
 }

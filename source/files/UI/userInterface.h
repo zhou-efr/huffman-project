@@ -26,7 +26,7 @@ void custom_color(char* str, char* color);
  * @param size
  * @return
  */
-char *cin(int size);
+void cin(int size, char *output);
 
 /**
  *
@@ -34,7 +34,7 @@ char *cin(int size);
  * @param size
  * @return
  */
-char *getLine(FILE *fp, int size);
+void getLine(FILE *fp, int size, char *output);
 
 /**
  * menu : bind a menu with the given component

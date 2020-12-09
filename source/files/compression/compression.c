@@ -6,7 +6,7 @@
 #include "../dico/dictionnary.h"
 #include "../SLL/Element.h"
 
-int uncompressChar(char* target, char *tree, char *outputPath)
+int decompression(char* target, char *tree, char *outputPath)
 {
     FILE* treeFile = fopen(tree, "r");
     Tree* arbre = read_tree(treeFile);
@@ -49,61 +49,7 @@ int uncompressChar(char* target, char *tree, char *outputPath)
     return 0;
 }
 
-void b_decompression(char *target, Tree *tree)
-{
-    FILE* binaries = NULL;
-    binaries = fopen(target, "rb");
-
-    if(!binaries)
-        return;
-
-    FILE* output = NULL;
-    output = fopen("output.txt", "w");
-
-    char ch = '\0';
-    Tree* searcher = tree;
-
-    // overbytes size
-    fread(&ch, sizeof(char), 1, binaries);
-    int bsize = (int)ch;
-    ch = '\0';
-
-    //get file size
-    int f_size = get_file_size(binaries);
-
-    // iterator
-    int i = 0;
-
-    while (ch != EOF && i < (f_size - bsize))
-    {
-        fread(&ch, sizeof(char), 1, binaries);
-        i++;
-
-        if (!hasSons(searcher))
-        {
-            //printf("%c", searcher->data);
-            fputc(searcher->data, output);
-            searcher = tree;
-        }
-
-        if(ch){
-            searcher = searcher->right;
-        }else{
-            searcher = searcher->left;
-        }
-    }
-
-    if (!hasSons(searcher))
-    {
-        fputc(searcher->data, output);
-        searcher = tree;
-    }
-
-    fclose(binaries);
-    fclose(output);
-}
-
-int b_compression(char *target)
+int compression(char *target)
 {
     // --- file read ---
     // file variables
@@ -160,68 +106,19 @@ int b_compression(char *target)
      * int i
      * */
 
-    char* outputPath = (char*)malloc(300*sizeof(char));
-    int strSize = strlen(target);
-    for (int j = 0; j < strSize; j++) {
-        if (target[j] == '.'){
-            outputPath[j] = target[j];
-            outputPath[j+1] = 't';
-            outputPath[j+2] = 'd';
-            outputPath[j+3] = 'z';
-            outputPath[j+4] = '\0';
-            break;
-        }else{
-            outputPath[j] = target[j];
-        }
-    }
-
+    char outputPath[300];
+    change_extension(outputPath, "tdz", target, 300);
+    printf("%s\n", outputPath);
     FILE* output = fopen(outputPath, "w");
 
-
-//    // file variable
-//    FILE* output = fopen("output.tdz", "wb");
-//
-//    // temporary variables
-//    char* temp_bin = NULL;
-//    int temp_bit = 0;
-//
-//    // binary size
-//    int bsize = 0;
-//
-//    printf()
-//
     i = 0;
     while (i <= size)
     {
-//        // write in file
-//            temp_bin = get_value(dictionary, transcription[i]);
-//        //printf("%c", transcription[i]);
-//        //printf("|%c\n", transcription[i]);
-//        for (int j = 0; temp_bin[j] != '\0'; j++)
-//        {
-//            //printf("%c", temp_bin[j]);
-//            temp_bit = (temp_bin[j] == '1');
-//            fwrite(&temp_bit, 1, 1, output);
-//            bsize++;
-//        }
-
         fprintf(output, get_value(dictionary, transcription[i]));
 
         // iterator update
         i++;
     }
-//
-//    // TODO: add the over byte system (integer)
-//    bsize = (bsize%8)?(8-(bsize%8)):0;
-//    ch = (char)bsize;
-//    temp_bit = 0;
-//    for (int j = 0; j < bsize; j++)
-//    {
-//        fwrite(&temp_bit, 1, 1, output);
-//    }
-//    fseek(output, 0L, SEEK_SET);
-//    fwrite(&ch, sizeof(char), 1, output);
-
     // close file
     fclose(output);
 
@@ -229,19 +126,8 @@ int b_compression(char *target)
     free(transcription);
     d_free(dictionary);
 
-    outputPath = (char*)malloc(300*sizeof(char));
-    for (int j = 0; j < strSize; j++) {
-        if (target[j] == '.'){
-            outputPath[j] = target[j];
-            outputPath[j+1] = 'z';
-            outputPath[j+2] = 'd';
-            outputPath[j+3] = 'd';
-            outputPath[j+4] = '\0';
-            break;
-        }else{
-            outputPath[j] = target[j];
-        }
-    }
+    change_extension(outputPath, "zdd", target, 300);
+
     output = fopen(outputPath, "w");
 
     //save tree
@@ -255,3 +141,41 @@ int b_compression(char *target)
 
     return 0;
 }
+
+// save
+
+//    // file variable
+//    FILE* output = fopen("output.tdz", "wb");
+//
+//    // temporary variables
+//    char* temp_bin = NULL;
+//    int temp_bit = 0;
+//
+//    // binary size
+//    int bsize = 0;
+//
+//    printf()
+//
+
+//        // write in file
+//            temp_bin = get_value(dictionary, transcription[i]);
+//        //printf("%c", transcription[i]);
+//        //printf("|%c\n", transcription[i]);
+//        for (int j = 0; temp_bin[j] != '\0'; j++)
+//        {
+//            //printf("%c", temp_bin[j]);
+//            temp_bit = (temp_bin[j] == '1');
+//            fwrite(&temp_bit, 1, 1, output);
+//            bsize++;
+//        }
+
+//
+//    bsize = (bsize%8)?(8-(bsize%8)):0;
+//    ch = (char)bsize;
+//    temp_bit = 0;
+//    for (int j = 0; j < bsize; j++)
+//    {
+//        fwrite(&temp_bit, 1, 1, output);
+//    }
+//    fseek(output, 0L, SEEK_SET);
+//    fwrite(&ch, sizeof(char), 1, output);
