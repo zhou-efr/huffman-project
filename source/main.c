@@ -79,10 +79,10 @@ int main()
             break;
         case 4:
             printf("translation of the original file\n");
-            txtToBinairies("a.txt");
+            txtToBinairies("test_file.txt");
             printf("component_compression\n");
             clock_t start = clock();
-            if (compression("a.txt"))
+            if (compression("test_file.txt"))
             {
                 custom_color("\n404 error file not found\n", "mangenta");
             }else{
@@ -95,7 +95,7 @@ int main()
 
                 printf("decompression\n");
                 start = clock();
-                if(decompression("a.tdz", "a.zdd", "output.txt"))
+                if(decompression("test_file.tdz", "test_file.zdd", "output.txt"))
                 {
                     custom_color("\n404 error file not found\n", "mangenta");
                 }else{
@@ -105,7 +105,7 @@ int main()
 
                     custom_color("\nsuccess\n", "green");
 
-                    switch (compare("a.txt", "output.txt"))
+                    switch (compare("test_file.txt", "output.txt"))
                     {
                         case 1:
                             custom_color("\nError : output different from the input\n", "red");
@@ -119,7 +119,7 @@ int main()
                         default:
                             custom_color("\ninput identical to output\n", "green");
                             FILE *file_original = fopen("output.bin", "r"),
-                                 *target_file = fopen("a.tdz", "r");
+                                 *target_file = fopen("test_file.tdz", "r");
                             double ratio = ((double)get_file_size(target_file))/((double)get_file_size(file_original));
                             if (ratio > 1) {
                                 custom_color("\nWarning: compression inefficient\n", "yellow");
