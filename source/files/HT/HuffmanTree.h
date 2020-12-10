@@ -5,25 +5,80 @@
 #ifndef HUFFMAN_NAIVE_C11_HUFFMANTREE_H
 #define HUFFMAN_NAIVE_C11_HUFFMANTREE_H
 
-#include "../SLL/Element.h"
+#include "../structures.h"
 
-typedef struct _huffmanTree
-{
-    int occurrence;
-    char data;
-    struct _huffmanTree* left;
-    struct _huffmanTree* right;
-}Tree;
-
+/**
+ *
+ * @return
+ */
 Tree* init_Tree();
+
+/**
+ *
+ * @param data
+ * @param occurrence
+ * @param left
+ * @param right
+ * @return
+ */
 Tree* create_tree(char data,
                   int occurrence,
                   Tree* left, Tree* right);
-void display_tree(Tree *tree, int space);
+
+/**
+ *
+ * @param node
+ */
 void t_free(Tree* node);
-Tree* sort_SLL_to_BT(Element* SLL);
+
+/**
+ *
+ * @param c
+ * @param source
+ * @param size
+ * @return
+ */
 char *get_bin(char c, Tree *source, int size);
+
+/**
+ *
+ * @param arbre
+ * @return
+ */
 int hasSons(Tree* arbre);
-void add_node(Tree **ht, char ch);
+
+/**
+ *
+ * @param occurrences
+ * @return
+ */
+Element* BT_to_UT(Tree* occurrences);
+
+/**
+ *
+ * @param SLL
+ */
+void SLL_to_HT(Element** SLL);
+
+/**
+ *
+ * @param ht
+ * @param ch
+ */
+void add_occurrences(Tree **ht, char ch);
+
+/**
+ *
+ * @param output_file
+ * @param tree
+ */
+void register_tree(FILE* output_file, Tree* tree);
+
+/**
+ *
+ * @param tree_file
+ * @return
+ */
+Tree* read_tree(FILE* tree_file);
 
 #endif //HUFFMAN_NAIVE_C11_HUFFMANTREE_H
