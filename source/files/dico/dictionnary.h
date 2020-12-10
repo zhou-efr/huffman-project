@@ -46,6 +46,8 @@ void d_free(Dico* dictionary);
 /**
  *
  * @param tree
+ * sorry sir Marshall-Breton but Guerric was a bit too lazy to made a better / original one (me too but that's the the
+ * question).
  */
 void balance(Dico** tree);
 

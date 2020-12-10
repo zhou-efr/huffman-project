@@ -22,7 +22,7 @@ Dico* htreetodico(Tree* huff, Tree* ascii)
 
 int depth(Dico* tree){
     if(tree == NULL){
-        return 0;//Attention définition. -1 ou 0
+        return 0;
     }
     else{
         int depth_left = depth(tree->left);
@@ -65,21 +65,21 @@ void left_rotation(Dico** tree){
 
 void balance(Dico** tree){
     if (*tree != NULL){
-        balance(&((*tree)->left));// Postfix
+        balance(&((*tree)->left));
         balance(&((*tree)->right));
 
         int balance_factor = bf(*tree);
-        if (balance_factor <= -2){// Cas Gauche - ??
-            if(bf((*tree)->left) > 0){// Gauche - Droite
+        if (balance_factor <= -2){
+            if(bf((*tree)->left) > 0){
                 left_rotation(&((*tree)->left));
             }
-            right_rotation(tree);// Gauche - Gauche
+            right_rotation(tree);
         }
-        else if (balance_factor >= 2){// Cas Droite - ??
-            if(bf((*tree)->right) < 0){// Droite - Gauche
+        else if (balance_factor >= 2){
+            if(bf((*tree)->right) < 0){
                 right_rotation(&((*tree)->right));
             }
-            left_rotation(tree);// Droite - Droite
+            left_rotation(tree);
         }
     }
 }
