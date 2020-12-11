@@ -9,21 +9,21 @@
 #include "../HT/HuffmanTree.h"
 
 /**
- *
- * @return
+ * init_element : initialize an element
+ * @return pointer to the initialized element
  */
 Element* init_element();
 
 /**
- *
+ * create_element : create a create_element node from given parameters
  * @param node
  * @param next
- * @return
+ * @return pointer to the created node
  */
 Element* create_element(Tree* node , Element* next);
 
 /**
- *
+ * free_SLL : free a SLL
  * @param node
  */
 void free_SLL(Element* node);
