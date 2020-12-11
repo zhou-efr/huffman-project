@@ -15,6 +15,7 @@ Dico* htreetodico(Tree* huff, Tree* ascii)
         (tree)->value = get_bin(ascii->data, huff, 0);
         (tree)->left = htreetodico(huff, ascii->left);
         (tree)->right = htreetodico(huff, ascii->right);
+        free(ascii);
         return tree;
     }
     return NULL;
