@@ -1,0 +1,102 @@
+\hypertarget{user_interface_8h}{}\doxysection{source/files/\+U\+I/user\+Interface.h File Reference}
+\label{user_interface_8h}\index{source/files/UI/userInterface.h@{source/files/UI/userInterface.h}}
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct___menu_component}{\+\_\+\+Menu\+Component}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct___menu_component}{\+\_\+\+Menu\+Component}} \mbox{\hyperlink{user_interface_8h_abe654d3300034a0e329d29f60b3559da}{Menu\+Component}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{user_interface_8h_afdf8f1c4c3d09f0944dd7caa560ec147}{custom\+\_\+color}} (char $\ast$str, char $\ast$color)
+\item 
+void \mbox{\hyperlink{user_interface_8h_a1db58841f403e727b7b4d01b0333e2ff}{cin}} (int size, char $\ast$output)
+\item 
+void \mbox{\hyperlink{user_interface_8h_aa87c5de2f0d23bde15a763a237e24eca}{get\+Line}} (F\+I\+LE $\ast$fp, int size, char $\ast$output)
+\item 
+int \mbox{\hyperlink{user_interface_8h_aa18909e7aee91c8805a3e98b70af7dd5}{menu}} (int size,...)
+\item 
+void \mbox{\hyperlink{user_interface_8h_a5c3f7dfe67ff6918423efcd6e261b999}{shell\+\_\+tdz}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{user_interface_8h_abe654d3300034a0e329d29f60b3559da}\label{user_interface_8h_abe654d3300034a0e329d29f60b3559da}} 
+\index{userInterface.h@{userInterface.h}!MenuComponent@{MenuComponent}}
+\index{MenuComponent@{MenuComponent}!userInterface.h@{userInterface.h}}
+\doxysubsubsection{\texorpdfstring{MenuComponent}{MenuComponent}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{struct___menu_component}{\+\_\+\+Menu\+Component}} \mbox{\hyperlink{user_interface_8h_abe654d3300034a0e329d29f60b3559da}{Menu\+Component}}}
+
+\mbox{\hyperlink{struct___menu_component}{\+\_\+\+Menu\+Component}} structure 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{user_interface_8h_a1db58841f403e727b7b4d01b0333e2ff}\label{user_interface_8h_a1db58841f403e727b7b4d01b0333e2ff}} 
+\index{userInterface.h@{userInterface.h}!cin@{cin}}
+\index{cin@{cin}!userInterface.h@{userInterface.h}}
+\doxysubsubsection{\texorpdfstring{cin()}{cin()}}
+{\footnotesize\ttfamily void cin (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{char $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_interface_8h_afdf8f1c4c3d09f0944dd7caa560ec147}\label{user_interface_8h_afdf8f1c4c3d09f0944dd7caa560ec147}} 
+\index{userInterface.h@{userInterface.h}!custom\_color@{custom\_color}}
+\index{custom\_color@{custom\_color}!userInterface.h@{userInterface.h}}
+\doxysubsubsection{\texorpdfstring{custom\_color()}{custom\_color()}}
+{\footnotesize\ttfamily void custom\+\_\+color (\begin{DoxyParamCaption}\item[{char $\ast$}]{str,  }\item[{char $\ast$}]{color }\end{DoxyParamCaption})}
+
+custom\+\_\+color \+: function that display given text with the given color 
+\begin{DoxyParams}{Parameters}
+{\em str} & \+: text we want to display \\
+\hline
+{\em color} & \+: wanted color (string or string with at \mbox{[}0\mbox{]} a number) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{user_interface_8h_aa87c5de2f0d23bde15a763a237e24eca}\label{user_interface_8h_aa87c5de2f0d23bde15a763a237e24eca}} 
+\index{userInterface.h@{userInterface.h}!getLine@{getLine}}
+\index{getLine@{getLine}!userInterface.h@{userInterface.h}}
+\doxysubsubsection{\texorpdfstring{getLine()}{getLine()}}
+{\footnotesize\ttfamily void get\+Line (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{fp,  }\item[{int}]{size,  }\item[{char $\ast$}]{output }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em fp} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_interface_8h_aa18909e7aee91c8805a3e98b70af7dd5}\label{user_interface_8h_aa18909e7aee91c8805a3e98b70af7dd5}} 
+\index{userInterface.h@{userInterface.h}!menu@{menu}}
+\index{menu@{menu}!userInterface.h@{userInterface.h}}
+\doxysubsubsection{\texorpdfstring{menu()}{menu()}}
+{\footnotesize\ttfamily int menu (\begin{DoxyParamCaption}\item[{int}]{size,  }\item[{}]{... }\end{DoxyParamCaption})}
+
+menu \+: bind a menu with the given component 
+\begin{DoxyParams}{Parameters}
+{\em size} & \+: number of component \\
+\hline
+{\em ...} & \+: component \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the return value of the selected component (if no component selected return -\/1) 
+\end{DoxyReturn}
+\mbox{\Hypertarget{user_interface_8h_a5c3f7dfe67ff6918423efcd6e261b999}\label{user_interface_8h_a5c3f7dfe67ff6918423efcd6e261b999}} 
+\index{userInterface.h@{userInterface.h}!shell\_tdz@{shell\_tdz}}
+\index{shell\_tdz@{shell\_tdz}!userInterface.h@{userInterface.h}}
+\doxysubsubsection{\texorpdfstring{shell\_tdz()}{shell\_tdz()}}
+{\footnotesize\ttfamily void shell\+\_\+tdz (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+

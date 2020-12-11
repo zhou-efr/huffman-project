@@ -1,0 +1,170 @@
+\hypertarget{_huffman_tree_8c}{}\doxysection{source/files/\+H\+T/\+Huffman\+Tree.c File Reference}
+\label{_huffman_tree_8c}\index{source/files/HT/HuffmanTree.c@{source/files/HT/HuffmanTree.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Huffman\+Tree.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../stack/\+Stack.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+S\+L\+L/\+Element.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$ \mbox{\hyperlink{_huffman_tree_8c_ab99c82eb0fe3221b4dd415ca0047a03c}{init\+\_\+\+Tree}} ()
+\item 
+\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$ \mbox{\hyperlink{_huffman_tree_8c_a5f4cff6e69bc285ea185983d6d14eec6}{create\+\_\+tree}} (char data, int occurrence, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$left, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$right)
+\item 
+\mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}} $\ast$ \mbox{\hyperlink{_huffman_tree_8c_a779d56b3276d2ae6f888726c9431e737}{B\+T\+\_\+to\+\_\+\+UT}} (\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$occurrences)
+\item 
+void \mbox{\hyperlink{_huffman_tree_8c_ab6019062fef889b885519210027063af}{S\+L\+L\+\_\+to\+\_\+\+HT}} (\mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}} $\ast$$\ast$l)
+\item 
+void \mbox{\hyperlink{_huffman_tree_8c_a98a1f25ea66374b0c4612d976fb24c36}{add\+\_\+occurrences}} (\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$$\ast$ht, char ch)
+\item 
+void \mbox{\hyperlink{_huffman_tree_8c_a3cae54b040657bc4c982ebc421b7d424}{t\+\_\+free}} (\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$node)
+\item 
+char $\ast$ \mbox{\hyperlink{_huffman_tree_8c_ab58c75a51eb140982e2574ff162e4611}{get\+\_\+bin}} (char c, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$source, int size)
+\item 
+int \mbox{\hyperlink{_huffman_tree_8c_a55092d7f9d798480bfaaa6794aaf27aa}{has\+Sons}} (\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$arbre)
+\item 
+void \mbox{\hyperlink{_huffman_tree_8c_a50647277ac44cb529a69b11c6edbce8e}{register\+\_\+tree}} (F\+I\+LE $\ast$output\+\_\+file, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$tree)
+\item 
+\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$ \mbox{\hyperlink{_huffman_tree_8c_a04fbc7a74f5946e0675c068e92b14927}{read\+\_\+tree}} (F\+I\+LE $\ast$tree\+\_\+file)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_huffman_tree_8c_a98a1f25ea66374b0c4612d976fb24c36}\label{_huffman_tree_8c_a98a1f25ea66374b0c4612d976fb24c36}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!add\_occurrences@{add\_occurrences}}
+\index{add\_occurrences@{add\_occurrences}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{add\_occurrences()}{add\_occurrences()}}
+{\footnotesize\ttfamily void add\+\_\+occurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$$\ast$}]{ht,  }\item[{char}]{ch }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em ht} & \\
+\hline
+{\em ch} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_tree_8c_a779d56b3276d2ae6f888726c9431e737}\label{_huffman_tree_8c_a779d56b3276d2ae6f888726c9431e737}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!BT\_to\_UT@{BT\_to\_UT}}
+\index{BT\_to\_UT@{BT\_to\_UT}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{BT\_to\_UT()}{BT\_to\_UT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}}$\ast$ B\+T\+\_\+to\+\_\+\+UT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{occurrences }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em occurrences} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_tree_8c_a5f4cff6e69bc285ea185983d6d14eec6}\label{_huffman_tree_8c_a5f4cff6e69bc285ea185983d6d14eec6}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!create\_tree@{create\_tree}}
+\index{create\_tree@{create\_tree}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{create\_tree()}{create\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}}$\ast$ create\+\_\+tree (\begin{DoxyParamCaption}\item[{char}]{data,  }\item[{int}]{occurrence,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{left,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{right }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & \\
+\hline
+{\em occurrence} & \\
+\hline
+{\em left} & \\
+\hline
+{\em right} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_tree_8c_ab58c75a51eb140982e2574ff162e4611}\label{_huffman_tree_8c_ab58c75a51eb140982e2574ff162e4611}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!get\_bin@{get\_bin}}
+\index{get\_bin@{get\_bin}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{get\_bin()}{get\_bin()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+bin (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{source,  }\item[{int}]{size }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & \\
+\hline
+{\em source} & \\
+\hline
+{\em size} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_tree_8c_a55092d7f9d798480bfaaa6794aaf27aa}\label{_huffman_tree_8c_a55092d7f9d798480bfaaa6794aaf27aa}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!hasSons@{hasSons}}
+\index{hasSons@{hasSons}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{hasSons()}{hasSons()}}
+{\footnotesize\ttfamily int has\+Sons (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{arbre }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em arbre} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_tree_8c_ab99c82eb0fe3221b4dd415ca0047a03c}\label{_huffman_tree_8c_ab99c82eb0fe3221b4dd415ca0047a03c}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!init\_Tree@{init\_Tree}}
+\index{init\_Tree@{init\_Tree}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{init\_Tree()}{init\_Tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}}$\ast$ init\+\_\+\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_tree_8c_a04fbc7a74f5946e0675c068e92b14927}\label{_huffman_tree_8c_a04fbc7a74f5946e0675c068e92b14927}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!read\_tree@{read\_tree}}
+\index{read\_tree@{read\_tree}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{read\_tree()}{read\_tree()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}}$\ast$ read\+\_\+tree (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{tree\+\_\+file }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree\+\_\+file} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{_huffman_tree_8c_a50647277ac44cb529a69b11c6edbce8e}\label{_huffman_tree_8c_a50647277ac44cb529a69b11c6edbce8e}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!register\_tree@{register\_tree}}
+\index{register\_tree@{register\_tree}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{register\_tree()}{register\_tree()}}
+{\footnotesize\ttfamily void register\+\_\+tree (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{output\+\_\+file,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em output\+\_\+file} & \\
+\hline
+{\em tree} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_tree_8c_ab6019062fef889b885519210027063af}\label{_huffman_tree_8c_ab6019062fef889b885519210027063af}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!SLL\_to\_HT@{SLL\_to\_HT}}
+\index{SLL\_to\_HT@{SLL\_to\_HT}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{SLL\_to\_HT()}{SLL\_to\_HT()}}
+{\footnotesize\ttfamily void S\+L\+L\+\_\+to\+\_\+\+HT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}} $\ast$$\ast$}]{S\+LL }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em S\+LL} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{_huffman_tree_8c_a3cae54b040657bc4c982ebc421b7d424}\label{_huffman_tree_8c_a3cae54b040657bc4c982ebc421b7d424}} 
+\index{HuffmanTree.c@{HuffmanTree.c}!t\_free@{t\_free}}
+\index{t\_free@{t\_free}!HuffmanTree.c@{HuffmanTree.c}}
+\doxysubsubsection{\texorpdfstring{t\_free()}{t\_free()}}
+{\footnotesize\ttfamily void t\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{node }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em node} & \\
+\hline
+\end{DoxyParams}

@@ -8,9 +8,9 @@
 #include <stdio.h>
 
 /**
- *
- * @param target
- * @return
+ * get_file_size : return the size of a function
+ * @param target : target file
+ * @return size of the file
  */
 int get_file_size(FILE* target);
 

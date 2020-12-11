@@ -108,7 +108,7 @@ int compression(char *target)
 
     char outputPath[300];
     change_extension(outputPath, "tdz", target, 300);
-    printf("%s\n", outputPath);
+    //printf("%s\n", outputPath);
     FILE* output = fopen(outputPath, "w");
 
     i = 0;

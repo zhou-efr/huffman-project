@@ -1,0 +1,136 @@
+\hypertarget{dictionnary_8c}{}\doxysection{source/files/dico/dictionnary.c File Reference}
+\label{dictionnary_8c}\index{source/files/dico/dictionnary.c@{source/files/dico/dictionnary.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}dictionnary.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../\+H\+T/\+Huffman\+Tree.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$ \mbox{\hyperlink{dictionnary_8c_af6d8bd39c94eec31482f4390ee53bb23}{htreetodico}} (\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$huff, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$ascii)
+\item 
+int \mbox{\hyperlink{dictionnary_8c_a20ad9fa8578c276d3d996bb5d1cd47f8}{depth}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$tree)
+\item 
+int \mbox{\hyperlink{dictionnary_8c_aed2e6e27c410742ebab2b0ad7425b5cb}{bf}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$tree)
+\item 
+void \mbox{\hyperlink{dictionnary_8c_acc93ff65569aaa1fa63afd6a1e0da26b}{right\+\_\+rotation}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$tree)
+\item 
+void \mbox{\hyperlink{dictionnary_8c_a682294670add9dcaf854e34385ac9f33}{left\+\_\+rotation}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$tree)
+\item 
+void \mbox{\hyperlink{dictionnary_8c_af4ac39eef335442f956b784d5e044403}{balance}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$tree)
+\item 
+void \mbox{\hyperlink{dictionnary_8c_aa6cb7694eefd1eb54eaaaa020bb28315}{trees\+\_\+balance\+\_\+\+B\+ST}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$tree)
+\item 
+void \mbox{\hyperlink{dictionnary_8c_a1cd41f875029e9fc6ba4c163855cc37a}{trees\+\_\+add\+\_\+value\+\_\+\+B\+ST}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$tree, char value, char $\ast$transcription)
+\item 
+char $\ast$ \mbox{\hyperlink{dictionnary_8c_a42cfd40f74cc1b5cd706638564e75c37}{get\+\_\+value}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$dictionary, char key)
+\item 
+void \mbox{\hyperlink{dictionnary_8c_a787d6362d03c2fb17439e6e1be61b225}{d\+\_\+free}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$dictionary)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dictionnary_8c_af4ac39eef335442f956b784d5e044403}\label{dictionnary_8c_af4ac39eef335442f956b784d5e044403}} 
+\index{dictionnary.c@{dictionnary.c}!balance@{balance}}
+\index{balance@{balance}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{balance()}{balance()}}
+{\footnotesize\ttfamily void balance (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & sorry sir Marshall-\/\+Breton but Guerric was a bit too lazy to made a better / original one (me too but that\textquotesingle{}s the the question). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionnary_8c_aed2e6e27c410742ebab2b0ad7425b5cb}\label{dictionnary_8c_aed2e6e27c410742ebab2b0ad7425b5cb}} 
+\index{dictionnary.c@{dictionnary.c}!bf@{bf}}
+\index{bf@{bf}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{bf()}{bf()}}
+{\footnotesize\ttfamily int bf (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dictionnary_8c_a787d6362d03c2fb17439e6e1be61b225}\label{dictionnary_8c_a787d6362d03c2fb17439e6e1be61b225}} 
+\index{dictionnary.c@{dictionnary.c}!d\_free@{d\_free}}
+\index{d\_free@{d\_free}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{d\_free()}{d\_free()}}
+{\footnotesize\ttfamily void d\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$}]{dictionary }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionnary_8c_a20ad9fa8578c276d3d996bb5d1cd47f8}\label{dictionnary_8c_a20ad9fa8578c276d3d996bb5d1cd47f8}} 
+\index{dictionnary.c@{dictionnary.c}!depth@{depth}}
+\index{depth@{depth}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{depth()}{depth()}}
+{\footnotesize\ttfamily int depth (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dictionnary_8c_a42cfd40f74cc1b5cd706638564e75c37}\label{dictionnary_8c_a42cfd40f74cc1b5cd706638564e75c37}} 
+\index{dictionnary.c@{dictionnary.c}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$}]{dictionary,  }\item[{char}]{key }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & \\
+\hline
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{dictionnary_8c_af6d8bd39c94eec31482f4390ee53bb23}\label{dictionnary_8c_af6d8bd39c94eec31482f4390ee53bb23}} 
+\index{dictionnary.c@{dictionnary.c}!htreetodico@{htreetodico}}
+\index{htreetodico@{htreetodico}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{htreetodico()}{htreetodico()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}}$\ast$ htreetodico (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{huff,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{ascii }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em huff} & \\
+\hline
+{\em ascii} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{dictionnary_8c_a682294670add9dcaf854e34385ac9f33}\label{dictionnary_8c_a682294670add9dcaf854e34385ac9f33}} 
+\index{dictionnary.c@{dictionnary.c}!left\_rotation@{left\_rotation}}
+\index{left\_rotation@{left\_rotation}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{left\_rotation()}{left\_rotation()}}
+{\footnotesize\ttfamily void left\+\_\+rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dictionnary_8c_acc93ff65569aaa1fa63afd6a1e0da26b}\label{dictionnary_8c_acc93ff65569aaa1fa63afd6a1e0da26b}} 
+\index{dictionnary.c@{dictionnary.c}!right\_rotation@{right\_rotation}}
+\index{right\_rotation@{right\_rotation}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{right\_rotation()}{right\_rotation()}}
+{\footnotesize\ttfamily void right\+\_\+rotation (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{dictionnary_8c_a1cd41f875029e9fc6ba4c163855cc37a}\label{dictionnary_8c_a1cd41f875029e9fc6ba4c163855cc37a}} 
+\index{dictionnary.c@{dictionnary.c}!trees\_add\_value\_BST@{trees\_add\_value\_BST}}
+\index{trees\_add\_value\_BST@{trees\_add\_value\_BST}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{trees\_add\_value\_BST()}{trees\_add\_value\_BST()}}
+{\footnotesize\ttfamily void trees\+\_\+add\+\_\+value\+\_\+\+B\+ST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$}]{tree,  }\item[{char}]{value,  }\item[{char $\ast$}]{transcription }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & \\
+\hline
+{\em value} & \\
+\hline
+{\em transcription} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{dictionnary_8c_aa6cb7694eefd1eb54eaaaa020bb28315}\label{dictionnary_8c_aa6cb7694eefd1eb54eaaaa020bb28315}} 
+\index{dictionnary.c@{dictionnary.c}!trees\_balance\_BST@{trees\_balance\_BST}}
+\index{trees\_balance\_BST@{trees\_balance\_BST}!dictionnary.c@{dictionnary.c}}
+\doxysubsubsection{\texorpdfstring{trees\_balance\_BST()}{trees\_balance\_BST()}}
+{\footnotesize\ttfamily void trees\+\_\+balance\+\_\+\+B\+ST (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$$\ast$}]{tree }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em tree} & \\
+\hline
+\end{DoxyParams}

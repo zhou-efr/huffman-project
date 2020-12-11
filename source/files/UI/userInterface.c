@@ -82,6 +82,7 @@ void getLine(FILE *fp, int size, char *output)
     int i = 0;
     for (i = 0; output[i] != '\n'; i++);
     output[i] = '\0';
+    fflush(fp);
 }
 
 void cin(int size, char *output)
