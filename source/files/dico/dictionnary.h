@@ -8,47 +8,25 @@
 #include "../structures.h"
 
 /**
- *
+ * htreetodico : convert a huffman tree into a dictionary
  * @param huff
  * @param ascii
- * @return
+ * @return pointer to de dictionary
  */
 Dico* htreetodico(Tree* huff, Tree* ascii);
 
 /**
- *
- * @param tree
- */
-void trees_balance_BST(Dico** tree);
-
-/**
- *
- * @param tree
- * @param value
- * @param transcription
- */
-void trees_add_value_BST(Dico **tree, char value, char *transcription);
-
-/**
- *
+ * get_value : return the binary path of a char in a huffman tree
  * @param dictionary
  * @param key
- * @return
+ * @return string containing the binary transcription
  */
 char* get_value(Dico* dictionary, char key);
 
 /**
- *
+ * d_free : free a dictionary
  * @param dictionary
  */
 void d_free(Dico* dictionary);
-
-/**
- *
- * @param tree
- * sorry sir Marshall-Breton but Guerric was a bit too lazy to made a better / original one (me too but that's the the
- * question).
- */
-void balance(Dico** tree);
 
 #endif //HUFFMAN_NAIVE_C11_DICTIONNARY_H
