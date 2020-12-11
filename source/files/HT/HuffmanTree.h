@@ -8,42 +8,46 @@
 #include "../structures.h"
 
 /**
- *
- * @return
+ * init_Tree : initialize a tree node
+ * @return pointer to the created node
+ * data = 0
+ * occurrence = 0
+ * left = NULL
+ * right = NULL
  */
 Tree* init_Tree();
 
 /**
- *
- * @param data
- * @param occurrence
- * @param left
- * @param right
- * @return
+ * create_tree : create a Tree node from given parameters
+ * @param data : char
+ * @param occurrence : integer
+ * @param left : left son of the tree
+ * @param right : right son of the tree
+ * @return pointer to the created node
  */
 Tree* create_tree(char data,
                   int occurrence,
                   Tree* left, Tree* right);
 
 /**
- *
+ * t_free : free a Tree
  * @param node
  */
 void t_free(Tree* node);
 
 /**
- *
+ * get_bin : found the string containing the binary transcription of a char in a huffman tree
  * @param c
  * @param source
  * @param size
- * @return
+ * @return containing the binary transcription
  */
 char *get_bin(char c, Tree *source, int size);
 
 /**
- *
+ * hasSons : tell if a tree node has at least one son
  * @param arbre
- * @return
+ * @return 0 if it doesn't has sons else 1
  */
 int hasSons(Tree* arbre);
 
@@ -72,7 +76,7 @@ void add_occurrences(Tree **ht, char ch);
  * @param output_file
  * @param tree
  */
-void register_tree(FILE* output_file, Tree* tree);
+void ecosia(FILE* output_file, Tree* tree);
 
 /**
  *

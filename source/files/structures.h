@@ -5,6 +5,10 @@
 #ifndef HUFFMAN_PROJECT_STRUCTURES_H
 #define HUFFMAN_PROJECT_STRUCTURES_H
 
+/*
+ * structure _huffmanTree : binary tree node
+ * type: Tree
+ */
 typedef struct _huffmanTree
 {
     int occurrence;
@@ -13,6 +17,9 @@ typedef struct _huffmanTree
     struct _huffmanTree* right;
 }Tree;
 
+/**
+ * structure _element : SLL
+ */
 typedef struct _element {
     Tree* node;
     struct _element *next;

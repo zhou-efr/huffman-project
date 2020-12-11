@@ -89,7 +89,7 @@ void SLL_to_HT(Element** l){
         add->next = *scan;
         *scan = add;
 
-        SLL_to_HT(l); //reccursif !
+        SLL_to_HT(l);
     }
 }
 
@@ -153,7 +153,7 @@ int hasSons(Tree* arbre)
     return (arbre->left && arbre->right);
 }
 
-void register_tree(FILE* output_file, Tree* tree)
+void ecosia(FILE* output_file, Tree* tree)
 {
     if(output_file == NULL){return;}
 
@@ -162,8 +162,8 @@ void register_tree(FILE* output_file, Tree* tree)
         if(tree->data == 0)
         {
             fputc(':',output_file);
-            register_tree(output_file, tree->left);
-            register_tree(output_file, tree->right);
+            ecosia(output_file, tree->left);
+            ecosia(output_file, tree->right);
         }
         else
         {
