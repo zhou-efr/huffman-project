@@ -1,0 +1,17 @@
+digraph "trees_log_prefix"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="trees_log_prefix",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="initialize_stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stack_8c.html#a2b86a130e370f6f33696e403d774b8c0",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="is_stack_empty",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stack_8c.html#aeb1e8bdb599979f53016466eee5d08d8",tooltip=" "];
+  Node1 -> Node4 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node4 [label="pull_stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stack_8c.html#a1224fb64ab951fe328ef841bfabdb5ed",tooltip=" "];
+  Node4 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node1 -> Node5 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node5 [label="push_stack",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_stack_8c.html#ae1f15f5e5efa0898aef3cc4809fb20c6",tooltip=" "];
+}

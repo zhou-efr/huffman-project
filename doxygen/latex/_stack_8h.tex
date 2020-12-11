@@ -1,7 +1,11 @@
-\hypertarget{_stack_8h}{}\doxysection{source/files/stack/\+Stack.h File Reference}
-\label{_stack_8h}\index{source/files/stack/Stack.h@{source/files/stack/Stack.h}}
+\hypertarget{_stack_8h}{}\doxysection{C\+:/\+Users/thepa/\+Code/\+C/huffman-\/project/source/files/stack/\+Stack.h File Reference}
+\label{_stack_8h}\index{C:/Users/thepa/Code/C/huffman-\/project/source/files/stack/Stack.h@{C:/Users/thepa/Code/C/huffman-\/project/source/files/stack/Stack.h}}
 {\ttfamily \#include \char`\"{}../structures.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../\+H\+T/\+Huffman\+Tree.\+h\char`\"{}}\newline
+Include dependency graph for Stack.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -22,47 +26,73 @@ int \mbox{\hyperlink{_stack_8h_aeb1e8bdb599979f53016466eee5d08d8}{is\+\_\+stack\
 \doxysubsubsection{\texorpdfstring{initialize\_stack()}{initialize\_stack()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{struct_stack}{Stack}}$\ast$ initialize\+\_\+stack (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\begin{DoxyReturn}{Returns}
-
+initialize\+\_\+stack \+: initialize a tree node \begin{DoxyReturn}{Returns}
+pointer to the created node node = N\+U\+LL next = N\+U\+LL 
 \end{DoxyReturn}
+
+
+Definition at line 9 of file Stack.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{_stack_8h_aeb1e8bdb599979f53016466eee5d08d8}\label{_stack_8h_aeb1e8bdb599979f53016466eee5d08d8}} 
 \index{Stack.h@{Stack.h}!is\_stack\_empty@{is\_stack\_empty}}
 \index{is\_stack\_empty@{is\_stack\_empty}!Stack.h@{Stack.h}}
 \doxysubsubsection{\texorpdfstring{is\_stack\_empty()}{is\_stack\_empty()}}
 {\footnotesize\ttfamily int is\+\_\+stack\+\_\+empty (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-
+is\+\_\+stack\+\_\+empty \+: tell if a stack is empty or not 
 \begin{DoxyParams}{Parameters}
 {\em stack} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+1 if the stack is empty, 0 else 
 \end{DoxyReturn}
+
+
+Definition at line 16 of file Stack.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 3
 \mbox{\Hypertarget{_stack_8h_a1224fb64ab951fe328ef841bfabdb5ed}\label{_stack_8h_a1224fb64ab951fe328ef841bfabdb5ed}} 
 \index{Stack.h@{Stack.h}!pull\_stack@{pull\_stack}}
 \index{pull\_stack@{pull\_stack}!Stack.h@{Stack.h}}
 \doxysubsubsection{\texorpdfstring{pull\_stack()}{pull\_stack()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}}$\ast$ pull\+\_\+stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack }\end{DoxyParamCaption})}
 
-
+pull\+\_\+stack \+: pull a tree from a stack 
 \begin{DoxyParams}{Parameters}
 {\em stack} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+the pulled tree 
 \end{DoxyReturn}
+
+
+Definition at line 21 of file Stack.\+c.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
 \mbox{\Hypertarget{_stack_8h_ae1f15f5e5efa0898aef3cc4809fb20c6}\label{_stack_8h_ae1f15f5e5efa0898aef3cc4809fb20c6}} 
 \index{Stack.h@{Stack.h}!push\_stack@{push\_stack}}
 \index{push\_stack@{push\_stack}!Stack.h@{Stack.h}}
 \doxysubsubsection{\texorpdfstring{push\_stack()}{push\_stack()}}
 {\footnotesize\ttfamily void push\+\_\+stack (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct_stack}{Stack}} $\ast$}]{stack,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{data }\end{DoxyParamCaption})}
 
-
+push\+\_\+stack \+: push a Tree to a stack 
 \begin{DoxyParams}{Parameters}
 {\em stack} & \\
 \hline
 {\em data} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 34 of file Stack.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 6

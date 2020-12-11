@@ -1,6 +1,10 @@
-\hypertarget{_huffman_tree_8h}{}\doxysection{source/files/\+H\+T/\+Huffman\+Tree.h File Reference}
-\label{_huffman_tree_8h}\index{source/files/HT/HuffmanTree.h@{source/files/HT/HuffmanTree.h}}
+\hypertarget{_huffman_tree_8h}{}\doxysection{C\+:/\+Users/thepa/\+Code/\+C/huffman-\/project/source/files/\+H\+T/\+Huffman\+Tree.h File Reference}
+\label{_huffman_tree_8h}\index{C:/Users/thepa/Code/C/huffman-\/project/source/files/HT/HuffmanTree.h@{C:/Users/thepa/Code/C/huffman-\/project/source/files/HT/HuffmanTree.h}}
 {\ttfamily \#include \char`\"{}../structures.\+h\char`\"{}}\newline
+Include dependency graph for Huffman\+Tree.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,7 +24,7 @@ void \mbox{\hyperlink{_huffman_tree_8h_afab7a650485142d451a2a9d27210d74c}{S\+L\+
 \item 
 void \mbox{\hyperlink{_huffman_tree_8h_a98a1f25ea66374b0c4612d976fb24c36}{add\+\_\+occurrences}} (\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$$\ast$ht, char ch)
 \item 
-void \mbox{\hyperlink{_huffman_tree_8h_a50647277ac44cb529a69b11c6edbce8e}{register\+\_\+tree}} (F\+I\+LE $\ast$output\+\_\+file, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$tree)
+void \mbox{\hyperlink{_huffman_tree_8h_a9525c2722a97ca9acf3af8c18d8d54b1}{ecosia}} (F\+I\+LE $\ast$output\+\_\+file, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$tree)
 \item 
 \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$ \mbox{\hyperlink{_huffman_tree_8h_a04fbc7a74f5946e0675c068e92b14927}{read\+\_\+tree}} (F\+I\+LE $\ast$tree\+\_\+file)
 \end{DoxyCompactItemize}
@@ -33,54 +37,97 @@ void \mbox{\hyperlink{_huffman_tree_8h_a50647277ac44cb529a69b11c6edbce8e}{regist
 \doxysubsubsection{\texorpdfstring{add\_occurrences()}{add\_occurrences()}}
 {\footnotesize\ttfamily void add\+\_\+occurrences (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$$\ast$}]{ht,  }\item[{char}]{ch }\end{DoxyParamCaption})}
 
-
+add\+\_\+occurrences \+: add an occurrence to a balanced tree sorted by occurrences 
 \begin{DoxyParams}{Parameters}
 {\em ht} & \\
 \hline
 {\em ch} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 96 of file Huffman\+Tree.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
 \mbox{\Hypertarget{_huffman_tree_8h_a779d56b3276d2ae6f888726c9431e737}\label{_huffman_tree_8h_a779d56b3276d2ae6f888726c9431e737}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!BT\_to\_UT@{BT\_to\_UT}}
 \index{BT\_to\_UT@{BT\_to\_UT}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{BT\_to\_UT()}{BT\_to\_UT()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}}$\ast$ B\+T\+\_\+to\+\_\+\+UT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{occurrences }\end{DoxyParamCaption})}
 
-
+B\+T\+\_\+to\+\_\+\+UT \+: convert a balance tree into an S\+LL of tree node sorted by occurrences 
 \begin{DoxyParams}{Parameters}
 {\em occurrences} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+pointer to the first node of the S\+LL 
 \end{DoxyReturn}
+
+
+Definition at line 33 of file Huffman\+Tree.\+c.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
 \mbox{\Hypertarget{_huffman_tree_8h_a5f4cff6e69bc285ea185983d6d14eec6}\label{_huffman_tree_8h_a5f4cff6e69bc285ea185983d6d14eec6}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!create\_tree@{create\_tree}}
 \index{create\_tree@{create\_tree}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{create\_tree()}{create\_tree()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}}$\ast$ create\+\_\+tree (\begin{DoxyParamCaption}\item[{char}]{data,  }\item[{int}]{occurrence,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{left,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{right }\end{DoxyParamCaption})}
 
-
+create\+\_\+tree \+: create a Tree node from given parameters 
 \begin{DoxyParams}{Parameters}
-{\em data} & \\
+{\em data} & \+: char \\
 \hline
-{\em occurrence} & \\
+{\em occurrence} & \+: integer \\
 \hline
-{\em left} & \\
+{\em left} & \+: left son of the tree \\
 \hline
-{\em right} & \\
+{\em right} & \+: right son of the tree \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+pointer to the created node 
 \end{DoxyReturn}
+
+
+Definition at line 22 of file Huffman\+Tree.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 6
+\mbox{\Hypertarget{_huffman_tree_8h_a9525c2722a97ca9acf3af8c18d8d54b1}\label{_huffman_tree_8h_a9525c2722a97ca9acf3af8c18d8d54b1}} 
+\index{HuffmanTree.h@{HuffmanTree.h}!ecosia@{ecosia}}
+\index{ecosia@{ecosia}!HuffmanTree.h@{HuffmanTree.h}}
+\doxysubsubsection{\texorpdfstring{ecosia()}{ecosia()}}
+{\footnotesize\ttfamily void ecosia (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{output\+\_\+file,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{tree }\end{DoxyParamCaption})}
+
+ecosia (register\+\_\+tree) \+: save a tree into a file 
+\begin{DoxyParams}{Parameters}
+{\em output\+\_\+file} & \\
+\hline
+{\em tree} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 156 of file Huffman\+Tree.\+c.
+
+Here is the call graph for this function\+:
+% FIG 7
+Here is the caller graph for this function\+:
+% FIG 8
 \mbox{\Hypertarget{_huffman_tree_8h_ab58c75a51eb140982e2574ff162e4611}\label{_huffman_tree_8h_ab58c75a51eb140982e2574ff162e4611}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!get\_bin@{get\_bin}}
 \index{get\_bin@{get\_bin}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{get\_bin()}{get\_bin()}}
 {\footnotesize\ttfamily char$\ast$ get\+\_\+bin (\begin{DoxyParamCaption}\item[{char}]{c,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{source,  }\item[{int}]{size }\end{DoxyParamCaption})}
 
-
+get\+\_\+bin \+: found the string containing the binary transcription of a char in a huffman tree 
 \begin{DoxyParams}{Parameters}
 {\em c} & \\
 \hline
@@ -90,77 +137,108 @@ void \mbox{\hyperlink{_huffman_tree_8h_a50647277ac44cb529a69b11c6edbce8e}{regist
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+containing the binary transcription 
 \end{DoxyReturn}
+
+
+Definition at line 123 of file Huffman\+Tree.\+c.
+
+Here is the call graph for this function\+:
+% FIG 9
+Here is the caller graph for this function\+:
+% FIG 10
 \mbox{\Hypertarget{_huffman_tree_8h_a55092d7f9d798480bfaaa6794aaf27aa}\label{_huffman_tree_8h_a55092d7f9d798480bfaaa6794aaf27aa}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!hasSons@{hasSons}}
 \index{hasSons@{hasSons}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{hasSons()}{hasSons()}}
 {\footnotesize\ttfamily int has\+Sons (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{arbre }\end{DoxyParamCaption})}
 
-
+has\+Sons \+: tell if a tree node has at least one son 
 \begin{DoxyParams}{Parameters}
 {\em arbre} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+0 if it doesn\textquotesingle{}t has sons else 1 
 \end{DoxyReturn}
+
+
+Definition at line 151 of file Huffman\+Tree.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 11
 \mbox{\Hypertarget{_huffman_tree_8h_ab99c82eb0fe3221b4dd415ca0047a03c}\label{_huffman_tree_8h_ab99c82eb0fe3221b4dd415ca0047a03c}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!init\_Tree@{init\_Tree}}
 \index{init\_Tree@{init\_Tree}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{init\_Tree()}{init\_Tree()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}}$\ast$ init\+\_\+\+Tree (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\begin{DoxyReturn}{Returns}
-
+init\+\_\+\+Tree \+: initialize a tree node \begin{DoxyReturn}{Returns}
+pointer to the created node data = 0 occurrence = 0 left = N\+U\+LL right = N\+U\+LL 
 \end{DoxyReturn}
+
+
+Definition at line 11 of file Huffman\+Tree.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 12
 \mbox{\Hypertarget{_huffman_tree_8h_a04fbc7a74f5946e0675c068e92b14927}\label{_huffman_tree_8h_a04fbc7a74f5946e0675c068e92b14927}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!read\_tree@{read\_tree}}
 \index{read\_tree@{read\_tree}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{read\_tree()}{read\_tree()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}}$\ast$ read\+\_\+tree (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{tree\+\_\+file }\end{DoxyParamCaption})}
 
-
+read\+\_\+tree \+: create a tree from a file 
 \begin{DoxyParams}{Parameters}
 {\em tree\+\_\+file} & \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+pointer to the created tree 
 \end{DoxyReturn}
-\mbox{\Hypertarget{_huffman_tree_8h_a50647277ac44cb529a69b11c6edbce8e}\label{_huffman_tree_8h_a50647277ac44cb529a69b11c6edbce8e}} 
-\index{HuffmanTree.h@{HuffmanTree.h}!register\_tree@{register\_tree}}
-\index{register\_tree@{register\_tree}!HuffmanTree.h@{HuffmanTree.h}}
-\doxysubsubsection{\texorpdfstring{register\_tree()}{register\_tree()}}
-{\footnotesize\ttfamily void register\+\_\+tree (\begin{DoxyParamCaption}\item[{F\+I\+LE $\ast$}]{output\+\_\+file,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{tree }\end{DoxyParamCaption})}
 
 
-\begin{DoxyParams}{Parameters}
-{\em output\+\_\+file} & \\
-\hline
-{\em tree} & \\
-\hline
-\end{DoxyParams}
+Definition at line 182 of file Huffman\+Tree.\+c.
+
+Here is the call graph for this function\+:
+% FIG 13
+Here is the caller graph for this function\+:
+% FIG 14
 \mbox{\Hypertarget{_huffman_tree_8h_afab7a650485142d451a2a9d27210d74c}\label{_huffman_tree_8h_afab7a650485142d451a2a9d27210d74c}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!SLL\_to\_HT@{SLL\_to\_HT}}
 \index{SLL\_to\_HT@{SLL\_to\_HT}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{SLL\_to\_HT()}{SLL\_to\_HT()}}
 {\footnotesize\ttfamily void S\+L\+L\+\_\+to\+\_\+\+HT (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}} $\ast$$\ast$}]{S\+LL }\end{DoxyParamCaption})}
 
-
+S\+L\+L\+\_\+to\+\_\+\+HT \+: convert a S\+LL of tree node into an huffman tree 
 \begin{DoxyParams}{Parameters}
-{\em S\+LL} & \\
+{\em S\+LL} & the given S\+LL will have one node containing the entire huffman tree \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 70 of file Huffman\+Tree.\+c.
+
+Here is the call graph for this function\+:
+% FIG 15
+Here is the caller graph for this function\+:
+% FIG 16
 \mbox{\Hypertarget{_huffman_tree_8h_a3cae54b040657bc4c982ebc421b7d424}\label{_huffman_tree_8h_a3cae54b040657bc4c982ebc421b7d424}} 
 \index{HuffmanTree.h@{HuffmanTree.h}!t\_free@{t\_free}}
 \index{t\_free@{t\_free}!HuffmanTree.h@{HuffmanTree.h}}
 \doxysubsubsection{\texorpdfstring{t\_free()}{t\_free()}}
 {\footnotesize\ttfamily void t\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{node }\end{DoxyParamCaption})}
 
-
+t\+\_\+free \+: free a Tree 
 \begin{DoxyParams}{Parameters}
 {\em node} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 113 of file Huffman\+Tree.\+c.
+
+Here is the call graph for this function\+:
+% FIG 17
+Here is the caller graph for this function\+:
+% FIG 18

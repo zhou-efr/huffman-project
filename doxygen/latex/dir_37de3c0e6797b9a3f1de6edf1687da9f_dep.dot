@@ -1,0 +1,20 @@
+digraph "C:/Users/thepa/Code/C/huffman-project/source/files/compression" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_5ee98bac3dbfda1f9fa546eede37cedf {
+    graph [ bgcolor="#ddddee", pencolor="black", label="files" fontname="Helvetica", fontsize="10", URL="dir_5ee98bac3dbfda1f9fa546eede37cedf.html"]
+  dir_37de3c0e6797b9a3f1de6edf1687da9f [shape=box, label="compression", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_37de3c0e6797b9a3f1de6edf1687da9f.html"];
+  }
+  dir_1ae58a5f6cf8721a061401619951f2a4 [shape=box label="HT" URL="dir_1ae58a5f6cf8721a061401619951f2a4.html"];
+  dir_643f3072276233b2da9cdf8345088062 [shape=box label="dico" URL="dir_643f3072276233b2da9cdf8345088062.html"];
+  dir_a94f86842404595260408e7fe0472e45 [shape=box label="SLL" URL="dir_a94f86842404595260408e7fe0472e45.html"];
+  dir_9f9d7ce1733d3d7b5be12dff87309716 [shape=box label="fstream" URL="dir_9f9d7ce1733d3d7b5be12dff87309716.html"];
+  dir_1ae58a5f6cf8721a061401619951f2a4->dir_a94f86842404595260408e7fe0472e45 [headlabel="1", labeldistance=1.5 headhref="dir_000005_000006.html"];
+  dir_643f3072276233b2da9cdf8345088062->dir_1ae58a5f6cf8721a061401619951f2a4 [headlabel="1", labeldistance=1.5 headhref="dir_000003_000005.html"];
+  dir_a94f86842404595260408e7fe0472e45->dir_1ae58a5f6cf8721a061401619951f2a4 [headlabel="1", labeldistance=1.5 headhref="dir_000006_000005.html"];
+  dir_37de3c0e6797b9a3f1de6edf1687da9f->dir_1ae58a5f6cf8721a061401619951f2a4 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000005.html"];
+  dir_37de3c0e6797b9a3f1de6edf1687da9f->dir_643f3072276233b2da9cdf8345088062 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000003.html"];
+  dir_37de3c0e6797b9a3f1de6edf1687da9f->dir_a94f86842404595260408e7fe0472e45 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000006.html"];
+  dir_37de3c0e6797b9a3f1de6edf1687da9f->dir_9f9d7ce1733d3d7b5be12dff87309716 [headlabel="1", labeldistance=1.5 headhref="dir_000002_000004.html"];
+}

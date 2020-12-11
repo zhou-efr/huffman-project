@@ -1,5 +1,5 @@
-\hypertarget{compression_8c}{}\doxysection{source/files/compression/compression.c File Reference}
-\label{compression_8c}\index{source/files/compression/compression.c@{source/files/compression/compression.c}}
+\hypertarget{compression_8c}{}\doxysection{C\+:/\+Users/thepa/\+Code/\+C/huffman-\/project/source/files/compression/compression.c File Reference}
+\label{compression_8c}\index{C:/Users/thepa/Code/C/huffman-\/project/source/files/compression/compression.c@{C:/Users/thepa/Code/C/huffman-\/project/source/files/compression/compression.c}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
 {\ttfamily \#include $<$malloc.\+h$>$}\newline
 {\ttfamily \#include $<$string.\+h$>$}\newline
@@ -7,6 +7,8 @@
 {\ttfamily \#include \char`\"{}../fstream/functions.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../dico/dictionnary.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../\+S\+L\+L/\+Element.\+h\char`\"{}}\newline
+Include dependency graph for compression.\+c\+:
+% FIG 0
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -28,6 +30,17 @@ This function compresses a given file
 {\em target} & is the file we want to compress \\
 \hline
 \end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function success or not 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file compression.\+c.
+
+Here is the call graph for this function\+:
+% FIG 1
+Here is the caller graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{compression_8c_ab52f77d3c527e3a3fc72ea6e14acc95e}\label{compression_8c_ab52f77d3c527e3a3fc72ea6e14acc95e}} 
 \index{compression.c@{compression.c}!decompression@{decompression}}
 \index{decompression@{decompression}!compression.c@{compression.c}}
@@ -36,13 +49,21 @@ This function compresses a given file
 
 
 \begin{DoxyParams}{Parameters}
-{\em target} & \\
+{\em target} & \+: path to the compressed file \\
 \hline
-{\em arbre} & \\
+{\em arbre} & \+: path to the saved tree \\
 \hline
-{\em uncompress\+Char} & \\
+{\em uncompress\+Char} & \+: path to the file where the output will be write \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+whether the function success or not 
 \end{DoxyReturn}
+
+
+Definition at line 9 of file compression.\+c.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4

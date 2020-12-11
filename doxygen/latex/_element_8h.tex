@@ -1,7 +1,11 @@
-\hypertarget{_element_8h}{}\doxysection{source/files/\+S\+L\+L/\+Element.h File Reference}
-\label{_element_8h}\index{source/files/SLL/Element.h@{source/files/SLL/Element.h}}
+\hypertarget{_element_8h}{}\doxysection{C\+:/\+Users/thepa/\+Code/\+C/huffman-\/project/source/files/\+S\+L\+L/\+Element.h File Reference}
+\label{_element_8h}\index{C:/Users/thepa/Code/C/huffman-\/project/source/files/SLL/Element.h@{C:/Users/thepa/Code/C/huffman-\/project/source/files/SLL/Element.h}}
 {\ttfamily \#include \char`\"{}../structures.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}../\+H\+T/\+Huffman\+Tree.\+h\char`\"{}}\newline
+Include dependency graph for Element.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -20,7 +24,7 @@ void \mbox{\hyperlink{_element_8h_a6f2f749e6d12f0a8cee3ede9d0130ddc}{free\+\_\+\
 \doxysubsubsection{\texorpdfstring{create\_element()}{create\_element()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}}$\ast$ create\+\_\+element (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{node,  }\item[{\mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}} $\ast$}]{next }\end{DoxyParamCaption})}
 
-
+create\+\_\+element \+: create a create\+\_\+element node from given parameters 
 \begin{DoxyParams}{Parameters}
 {\em node} & \\
 \hline
@@ -28,25 +32,47 @@ void \mbox{\hyperlink{_element_8h_a6f2f749e6d12f0a8cee3ede9d0130ddc}{free\+\_\+\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+pointer to the created node 
 \end{DoxyReturn}
+
+
+Definition at line 17 of file Element.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{_element_8h_a6f2f749e6d12f0a8cee3ede9d0130ddc}\label{_element_8h_a6f2f749e6d12f0a8cee3ede9d0130ddc}} 
 \index{Element.h@{Element.h}!free\_SLL@{free\_SLL}}
 \index{free\_SLL@{free\_SLL}!Element.h@{Element.h}}
 \doxysubsubsection{\texorpdfstring{free\_SLL()}{free\_SLL()}}
 {\footnotesize\ttfamily void free\+\_\+\+S\+LL (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}} $\ast$}]{node }\end{DoxyParamCaption})}
 
-
+free\+\_\+\+S\+LL \+: free a S\+LL 
 \begin{DoxyParams}{Parameters}
 {\em node} & \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 25 of file Element.\+c.
+
+Here is the call graph for this function\+:
+% FIG 3
+Here is the caller graph for this function\+:
+% FIG 4
 \mbox{\Hypertarget{_element_8h_af124caf257f07aa22a54088de794936c}\label{_element_8h_af124caf257f07aa22a54088de794936c}} 
 \index{Element.h@{Element.h}!init\_element@{init\_element}}
 \index{init\_element@{init\_element}!Element.h@{Element.h}}
 \doxysubsubsection{\texorpdfstring{init\_element()}{init\_element()}}
 {\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_a29e6a5502e11b68e71720bf2f6a42d60}{Element}}$\ast$ init\+\_\+element (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
-\begin{DoxyReturn}{Returns}
-
+init\+\_\+element \+: initialize an element \begin{DoxyReturn}{Returns}
+pointer to the initialized element 
 \end{DoxyReturn}
+
+
+Definition at line 9 of file Element.\+c.
+
+Here is the call graph for this function\+:
+% FIG 5
+Here is the caller graph for this function\+:
+% FIG 6

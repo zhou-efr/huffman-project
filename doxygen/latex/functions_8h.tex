@@ -1,6 +1,10 @@
-\hypertarget{functions_8h}{}\doxysection{source/files/fstream/functions.h File Reference}
-\label{functions_8h}\index{source/files/fstream/functions.h@{source/files/fstream/functions.h}}
+\hypertarget{functions_8h}{}\doxysection{C\+:/\+Users/thepa/\+Code/\+C/huffman-\/project/source/files/fstream/functions.h File Reference}
+\label{functions_8h}\index{C:/Users/thepa/Code/C/huffman-\/project/source/files/fstream/functions.h@{C:/Users/thepa/Code/C/huffman-\/project/source/files/fstream/functions.h}}
 {\ttfamily \#include $<$stdio.\+h$>$}\newline
+Include dependency graph for functions.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
 \doxysubsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -21,29 +25,45 @@ int \mbox{\hyperlink{functions_8h_a2a8f5f16bbb5cd35c2be105ea5ca4602}{compare}} (
 \doxysubsubsection{\texorpdfstring{change\_extension()}{change\_extension()}}
 {\footnotesize\ttfamily void change\+\_\+extension (\begin{DoxyParamCaption}\item[{char $\ast$}]{target,  }\item[{char $\ast$}]{new\+Extension,  }\item[{char $\ast$}]{original,  }\item[{int}]{size }\end{DoxyParamCaption})}
 
-
+change\+\_\+extension \+: change the extension (3 char) of a string and put it in another string 
 \begin{DoxyParams}{Parameters}
-{\em target} & \\
+{\em target} & \+: string which will be changed \\
 \hline
-{\em new\+Extension} & \\
+{\em new\+Extension} & \+: new extension (3 characters) \\
+\hline
+{\em original} & \+: original string \\
+\hline
+{\em size} & \+: size of the original string \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 15 of file functions.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 2
 \mbox{\Hypertarget{functions_8h_a2a8f5f16bbb5cd35c2be105ea5ca4602}\label{functions_8h_a2a8f5f16bbb5cd35c2be105ea5ca4602}} 
 \index{functions.h@{functions.h}!compare@{compare}}
 \index{compare@{compare}!functions.h@{functions.h}}
 \doxysubsubsection{\texorpdfstring{compare()}{compare()}}
 {\footnotesize\ttfamily int compare (\begin{DoxyParamCaption}\item[{char $\ast$}]{original,  }\item[{char $\ast$}]{target }\end{DoxyParamCaption})}
 
-
+compare \+: compare 2 files 
 \begin{DoxyParams}{Parameters}
-{\em original} & \\
+{\em original} & \+: path of the first file \\
 \hline
-{\em target} & \\
+{\em target} & \+: path of the second file \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-
+\+: 0 if same, 1 if different, 2 if file 1 doesn\textquotesingle{}t exist, 3 if file 2 doesn\textquotesingle{}t exist 
 \end{DoxyReturn}
+
+
+Definition at line 52 of file functions.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 3
 \mbox{\Hypertarget{functions_8h_acb990052535722a8280bce95a8d82657}\label{functions_8h_acb990052535722a8280bce95a8d82657}} 
 \index{functions.h@{functions.h}!get\_file\_size@{get\_file\_size}}
 \index{get\_file\_size@{get\_file\_size}!functions.h@{functions.h}}
@@ -58,14 +78,26 @@ get\+\_\+file\+\_\+size \+: return the size of a function
 \begin{DoxyReturn}{Returns}
 size of the file 
 \end{DoxyReturn}
+
+
+Definition at line 7 of file functions.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 4
 \mbox{\Hypertarget{functions_8h_a11480a9ae51775ccc2f1c4b4e334725c}\label{functions_8h_a11480a9ae51775ccc2f1c4b4e334725c}} 
 \index{functions.h@{functions.h}!txtToBinairies@{txtToBinairies}}
 \index{txtToBinairies@{txtToBinairies}!functions.h@{functions.h}}
 \doxysubsubsection{\texorpdfstring{txtToBinairies()}{txtToBinairies()}}
 {\footnotesize\ttfamily void txt\+To\+Binairies (\begin{DoxyParamCaption}\item[{char $\ast$}]{target }\end{DoxyParamCaption})}
 
-
+txt\+To\+Binairies \+: create a file with the binary transcription of the target file 
 \begin{DoxyParams}{Parameters}
-{\em target} & \\
+{\em target} & \+: string path to the target file \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 31 of file functions.\+c.
+
+Here is the caller graph for this function\+:
+% FIG 5
