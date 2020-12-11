@@ -1,0 +1,11 @@
+digraph "C:/Users/thepa/Code/C/huffman-project/source/files/dico" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_5ee98bac3dbfda1f9fa546eede37cedf {
+    graph [ bgcolor="#ddddee", pencolor="black", label="files" fontname="Helvetica", fontsize="10", URL="dir_5ee98bac3dbfda1f9fa546eede37cedf.html"]
+  dir_643f3072276233b2da9cdf8345088062 [shape=box, label="dico", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_643f3072276233b2da9cdf8345088062.html"];
+  }
+  dir_1ae58a5f6cf8721a061401619951f2a4 [shape=box label="HT" URL="dir_1ae58a5f6cf8721a061401619951f2a4.html"];
+  dir_643f3072276233b2da9cdf8345088062->dir_1ae58a5f6cf8721a061401619951f2a4 [headlabel="1", labeldistance=1.5 headhref="dir_000003_000005.html"];
+}

@@ -1,0 +1,65 @@
+\hypertarget{compression_8h}{}\doxysection{C\+:/\+Users/thepa/\+Code/\+C/huffman-\/project/source/files/compression/compression.h File Reference}
+\label{compression_8h}\index{C:/Users/thepa/Code/C/huffman-\/project/source/files/compression/compression.h@{C:/Users/thepa/Code/C/huffman-\/project/source/files/compression/compression.h}}
+{\ttfamily \#include \char`\"{}../\+H\+T/\+Huffman\+Tree.\+h\char`\"{}}\newline
+Include dependency graph for compression.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{compression_8h_addb33bb737a3237d9f76e8692057e887}{compression}} (char $\ast$target)
+\item 
+int \mbox{\hyperlink{compression_8h_aa961da401d2d192abbf25a28f1e5bde3}{decompression}} (char $\ast$target, char $\ast$arbre, char $\ast$uncompress\+Char)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{compression_8h_addb33bb737a3237d9f76e8692057e887}\label{compression_8h_addb33bb737a3237d9f76e8692057e887}} 
+\index{compression.h@{compression.h}!compression@{compression}}
+\index{compression@{compression}!compression.h@{compression.h}}
+\doxysubsubsection{\texorpdfstring{compression()}{compression()}}
+{\footnotesize\ttfamily int compression (\begin{DoxyParamCaption}\item[{char $\ast$}]{target }\end{DoxyParamCaption})}
+
+This function compresses a given file 
+\begin{DoxyParams}{Parameters}
+{\em target} & is the file we want to compress \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function success or not 
+\end{DoxyReturn}
+
+
+Definition at line 52 of file compression.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{compression_8h_aa961da401d2d192abbf25a28f1e5bde3}\label{compression_8h_aa961da401d2d192abbf25a28f1e5bde3}} 
+\index{compression.h@{compression.h}!decompression@{decompression}}
+\index{decompression@{decompression}!compression.h@{compression.h}}
+\doxysubsubsection{\texorpdfstring{decompression()}{decompression()}}
+{\footnotesize\ttfamily int decompression (\begin{DoxyParamCaption}\item[{char $\ast$}]{target,  }\item[{char $\ast$}]{arbre,  }\item[{char $\ast$}]{uncompress\+Char }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em target} & \+: path to the compressed file \\
+\hline
+{\em arbre} & \+: path to the saved tree \\
+\hline
+{\em uncompress\+Char} & \+: path to the file where the output will be write \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+whether the function success or not 
+\end{DoxyReturn}
+
+
+Definition at line 9 of file compression.\+c.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5

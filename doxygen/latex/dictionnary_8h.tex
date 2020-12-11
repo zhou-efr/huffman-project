@@ -1,0 +1,86 @@
+\hypertarget{dictionnary_8h}{}\doxysection{C\+:/\+Users/thepa/\+Code/\+C/huffman-\/project/source/files/dico/dictionnary.h File Reference}
+\label{dictionnary_8h}\index{C:/Users/thepa/Code/C/huffman-\/project/source/files/dico/dictionnary.h@{C:/Users/thepa/Code/C/huffman-\/project/source/files/dico/dictionnary.h}}
+{\ttfamily \#include \char`\"{}../structures.\+h\char`\"{}}\newline
+Include dependency graph for dictionnary.\+h\+:
+% FIG 0
+This graph shows which files directly or indirectly include this file\+:
+% FIG 1
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$ \mbox{\hyperlink{dictionnary_8h_af6d8bd39c94eec31482f4390ee53bb23}{htreetodico}} (\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$huff, \mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$ascii)
+\item 
+char $\ast$ \mbox{\hyperlink{dictionnary_8h_a42cfd40f74cc1b5cd706638564e75c37}{get\+\_\+value}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$dictionary, char key)
+\item 
+void \mbox{\hyperlink{dictionnary_8h_a787d6362d03c2fb17439e6e1be61b225}{d\+\_\+free}} (\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$dictionary)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dictionnary_8h_a787d6362d03c2fb17439e6e1be61b225}\label{dictionnary_8h_a787d6362d03c2fb17439e6e1be61b225}} 
+\index{dictionnary.h@{dictionnary.h}!d\_free@{d\_free}}
+\index{d\_free@{d\_free}!dictionnary.h@{dictionnary.h}}
+\doxysubsubsection{\texorpdfstring{d\_free()}{d\_free()}}
+{\footnotesize\ttfamily void d\+\_\+free (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$}]{dictionary }\end{DoxyParamCaption})}
+
+d\+\_\+free \+: free a dictionary 
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 35 of file dictionnary.\+c.
+
+Here is the call graph for this function\+:
+% FIG 2
+Here is the caller graph for this function\+:
+% FIG 3
+\mbox{\Hypertarget{dictionnary_8h_a42cfd40f74cc1b5cd706638564e75c37}\label{dictionnary_8h_a42cfd40f74cc1b5cd706638564e75c37}} 
+\index{dictionnary.h@{dictionnary.h}!get\_value@{get\_value}}
+\index{get\_value@{get\_value}!dictionnary.h@{dictionnary.h}}
+\doxysubsubsection{\texorpdfstring{get\_value()}{get\_value()}}
+{\footnotesize\ttfamily char$\ast$ get\+\_\+value (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}} $\ast$}]{dictionary,  }\item[{char}]{key }\end{DoxyParamCaption})}
+
+get\+\_\+value \+: return the binary path of a char in a huffman tree 
+\begin{DoxyParams}{Parameters}
+{\em dictionary} & \\
+\hline
+{\em key} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string containing the binary transcription 
+\end{DoxyReturn}
+
+
+Definition at line 23 of file dictionnary.\+c.
+
+Here is the call graph for this function\+:
+% FIG 4
+Here is the caller graph for this function\+:
+% FIG 5
+\mbox{\Hypertarget{dictionnary_8h_af6d8bd39c94eec31482f4390ee53bb23}\label{dictionnary_8h_af6d8bd39c94eec31482f4390ee53bb23}} 
+\index{dictionnary.h@{dictionnary.h}!htreetodico@{htreetodico}}
+\index{htreetodico@{htreetodico}!dictionnary.h@{dictionnary.h}}
+\doxysubsubsection{\texorpdfstring{htreetodico()}{htreetodico()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structures_8h_a2231c6dc2bd88cf1fa7b760196f93601}{Dico}}$\ast$ htreetodico (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{huff,  }\item[{\mbox{\hyperlink{structures_8h_aef1bcee4bec4000a649c098908d863f2}{Tree}} $\ast$}]{ascii }\end{DoxyParamCaption})}
+
+htreetodico \+: convert a huffman tree into a dictionary 
+\begin{DoxyParams}{Parameters}
+{\em huff} & \\
+\hline
+{\em ascii} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+pointer to de dictionary 
+\end{DoxyReturn}
+
+
+Definition at line 10 of file dictionnary.\+c.
+
+Here is the call graph for this function\+:
+% FIG 6
+Here is the caller graph for this function\+:
+% FIG 7

@@ -108,7 +108,7 @@ int compression(char *target)
 
     char outputPath[300];
     change_extension(outputPath, "tdz", target, 300);
-    printf("%s\n", outputPath);
+    //printf("%s\n", outputPath);
     FILE* output = fopen(outputPath, "w");
 
     i = 0;
@@ -122,6 +122,10 @@ int compression(char *target)
     // close file
     fclose(output);
 
+//    Dico* buffer = NULL;
+//    for(buffer = dictionary; buffer->right != NULL; buffer = buffer->right);
+//    printf("\n%s\n", buffer->value);
+
     // free variables
     free(transcription);
     d_free(dictionary);
@@ -131,7 +135,7 @@ int compression(char *target)
     output = fopen(outputPath, "w");
 
     //save tree
-    register_tree(output, HT);
+    ecosia(output, HT);
 
     //reclose file
     fclose(output);

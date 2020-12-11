@@ -45,7 +45,7 @@ void getLine(FILE *fp, int size, char *output);
 int menu(int size, ...);
 
 /**
- *
+ * display tdz logo on the shell
  */
 void shell_tdz();
 

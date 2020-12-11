@@ -1,0 +1,12 @@
+digraph "C:/Users/thepa/Code/C/huffman-project/source/files/stack" {
+  compound=true
+  node [ fontsize="10", fontname="Helvetica"];
+  edge [ labelfontsize="10", labelfontname="Helvetica"];
+  subgraph clusterdir_5ee98bac3dbfda1f9fa546eede37cedf {
+    graph [ bgcolor="#ddddee", pencolor="black", label="files" fontname="Helvetica", fontsize="10", URL="dir_5ee98bac3dbfda1f9fa546eede37cedf.html"]
+  dir_787d5c378f7e5ed8fb0f5b813832ba75 [shape=box, label="stack", style="filled", fillcolor="#eeeeff", pencolor="black", URL="dir_787d5c378f7e5ed8fb0f5b813832ba75.html"];
+  }
+  dir_1ae58a5f6cf8721a061401619951f2a4 [shape=box label="HT" URL="dir_1ae58a5f6cf8721a061401619951f2a4.html"];
+  dir_1ae58a5f6cf8721a061401619951f2a4->dir_787d5c378f7e5ed8fb0f5b813832ba75 [headlabel="1", labeldistance=1.5 headhref="dir_000005_000007.html"];
+  dir_787d5c378f7e5ed8fb0f5b813832ba75->dir_1ae58a5f6cf8721a061401619951f2a4 [headlabel="1", labeldistance=1.5 headhref="dir_000007_000005.html"];
+}

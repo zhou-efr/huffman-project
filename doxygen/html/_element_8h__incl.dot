@@ -1,0 +1,12 @@
+digraph "C:/Users/thepa/Code/C/huffman-project/source/files/SLL/Element.h"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  Node1 [label="C:/Users/thepa/Code\l/C/huffman-project/source\l/files/SLL/Element.h",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="../structures.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structures_8h.html",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="../HT/HuffmanTree.h",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_huffman_tree_8h.html",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}

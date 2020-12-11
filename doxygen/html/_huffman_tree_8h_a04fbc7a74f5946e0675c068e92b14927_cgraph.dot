@@ -1,0 +1,14 @@
+digraph "read_tree"
+{
+ // LATEX_PDF_SIZE
+  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
+  node [fontname="Helvetica",fontsize="10",shape=record];
+  rankdir="LR";
+  Node1 [label="read_tree",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black",tooltip=" "];
+  Node1 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node2 [label="init_Tree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_huffman_tree_8c.html#ab99c82eb0fe3221b4dd415ca0047a03c",tooltip=" "];
+  Node1 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 [label="read_tree",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$_huffman_tree_8c.html#a04fbc7a74f5946e0675c068e92b14927",tooltip=" "];
+  Node3 -> Node2 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+  Node3 -> Node3 [color="midnightblue",fontsize="10",style="solid",fontname="Helvetica"];
+}
