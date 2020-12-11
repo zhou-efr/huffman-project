@@ -9,29 +9,31 @@
 #include "../HT/HuffmanTree.h"
 
 /**
- *
+ * push_stack : push a Tree to a stack
  * @param stack
  * @param data
  */
 void push_stack(Stack* stack, Tree *data);
 
 /**
- *
+ * pull_stack : pull a tree from a stack
  * @param stack
- * @return
+ * @return the pulled tree
  */
 Tree * pull_stack(Stack* stack);
 
 /**
- *
+ * is_stack_empty : tell if a stack is empty or not
  * @param stack
- * @return
+ * @return 1 if the stack is empty, 0 else
  */
 int is_stack_empty(Stack* stack);
 
 /**
- *
- * @return
+ * initialize_stack : initialize a tree node
+ * @return pointer to the created node
+ * node = NULL
+ * next = NULL
  */
 Stack* initialize_stack();
 
