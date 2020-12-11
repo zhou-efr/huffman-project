@@ -10,6 +10,7 @@ int decompression(char* target, char *tree, char *outputPath)
 {
     FILE* treeFile = fopen(tree, "r");
     Tree* arbre = read_tree(treeFile);
+    fclose(treeFile);
 
     FILE* binaries = NULL;
     binaries = fopen(target, "r");
@@ -46,6 +47,8 @@ int decompression(char* target, char *tree, char *outputPath)
 
     fclose(binaries);
     fclose(output);
+
+    t_free(arbre);
     return 0;
 }
 
@@ -89,7 +92,7 @@ int compression(char *target)
     Element* HS = BT_to_UT(occurrences);
     SLL_to_HT(&HS);
     Tree* HT = HS->node;
-    Dico* dictionary = htreetodico(HT, occurrences);
+    Dico* dictionary = htreetodico(HT, occurrences); // it free occurrences
 
     // temporary
     //Tree* h_tree = sort_SLL_to_BT(list);
